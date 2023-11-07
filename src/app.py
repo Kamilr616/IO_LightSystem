@@ -8,8 +8,10 @@ __status__ = "Development"
 
 import mediapipe as mp
 import cv2
+
+
 class HandTracker:
-    def __init__(self, mode=False, max_hands=2, detection_con=0.5, model_complexity=1, track_con=0.5):
+    def __init__(self, mode=False, max_hands=1, detection_con=0.5, model_complexity=1, track_con=0.5):
         # Inicjalizacja parametrów śledzenia dłoni
         self.mode = mode
         self.max_hands = max_hands
@@ -34,7 +36,7 @@ class HandTracker:
                     self.mp_draw.draw_landmarks(image, hand_landmarks, self.mp_hands.HAND_CONNECTIONS)
         return image
 
-    def find_positions(self, image, hand_no=0, draw=True):
+    def find_positions(self, image, hand_no=0):
         # Znajdowanie pozycji (landmarków) dłoni
         lm_list = []
         if self.results.multi_hand_landmarks:
@@ -43,7 +45,4 @@ class HandTracker:
                 h, w, c = image.shape
                 cx, cy = int(lm.x * w), int(lm.y * h)
                 lm_list.append([id, cx, cy])
-                if draw:
-                    # Rysowanie okręgów wokół landmarków
-                    cv2.circle(image, (cx, cy), 10, (255, 0, 255), cv2.FILLED)
         return lm_list

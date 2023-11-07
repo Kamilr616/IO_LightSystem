@@ -34,7 +34,7 @@ def main():
             hand_x, hand_y = lm_list[9][1], lm_list[9][2]
 
             cv2.circle(image, (hand_x, hand_y), 30, (0, 255, 0), cv2.FILLED)
-            cv2.rectangle(image, (hand_x - 20, 460), (hand_x + 20, 500), (255, 255, 0), cv2.FILLED)
+            cv2.rectangle(image, (hand_x - 20, 460), (hand_x + 20, 500), (0, 255, 255), cv2.FILLED)
 
             position_info = f"Pozycja dłoni: x = {hand_x} | y = {hand_y}|"
 

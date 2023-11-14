@@ -8,7 +8,7 @@ __status__ = "Development"
 
 # import math
 # import os
-from app import *
+# from app import *
 from tracker import *
 
 WIN_NAME = "Inteligentne oswietlenie - IO"

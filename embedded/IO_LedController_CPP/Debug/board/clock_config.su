@@ -1,0 +1,7 @@
+/home/kamil/PycharmProjects/IO_LightSystem/embedded/IO_LedController_CPP/drivers/fsl_clock.h:390:20:CLOCK_Select	16	static
+/home/kamil/PycharmProjects/IO_LightSystem/embedded/IO_LedController_CPP/drivers/fsl_clock.h:422:20:CLOCK_SetCoreSysClkDiv	16	static
+/home/kamil/PycharmProjects/IO_LightSystem/embedded/IO_LedController_CPP/drivers/fsl_power.h:152:20:POWER_DisablePD	16	static
+../board/clock_config.c:36:6:BOARD_InitBootClocks	8	static
+../board/clock_config.c:67:6:BOARD_BootClockFRO18M	8	static
+../board/clock_config.c:108:6:BOARD_BootClockFRO24M	8	static
+../board/clock_config.c:146:6:BOARD_BootClockFRO30M	8	static

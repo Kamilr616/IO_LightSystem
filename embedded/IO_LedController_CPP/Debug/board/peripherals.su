@@ -1,0 +1,3 @@
+../board/peripherals.c:110:13:SPI0_init	8	static
+../board/peripherals.c:118:6:BOARD_InitPeripherals	8	static
+../board/peripherals.c:127:6:BOARD_InitBootPeripherals	8	static

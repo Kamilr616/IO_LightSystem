@@ -1,0 +1,3 @@
+../device/system_LPC804.c:68:6:SystemInit	8	static
+../device/system_LPC804.c:85:6:SystemCoreClockUpdate	8	static
+../device/system_LPC804.c:114:29:SystemInitHook	8	static

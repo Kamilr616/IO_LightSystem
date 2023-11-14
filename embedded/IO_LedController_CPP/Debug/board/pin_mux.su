@@ -1,0 +1,11 @@
+/home/kamil/PycharmProjects/IO_LightSystem/embedded/IO_LedController_CPP/drivers/fsl_clock.h:368:20:CLOCK_EnableClock	16	static
+/home/kamil/PycharmProjects/IO_LightSystem/embedded/IO_LedController_CPP/drivers/fsl_clock.h:379:20:CLOCK_DisableClock	16	static
+/home/kamil/PycharmProjects/IO_LightSystem/embedded/IO_LedController_CPP/drivers/fsl_iocon.h:102:22:IOCON_PinMuxSet	24	static
+../board/pin_mux.c:34:6:BOARD_InitBootPins	8	static
+../board/pin_mux.c:58:6:BOARD_InitPins	8	static
+../board/pin_mux.c:85:6:BOARD_InitLEDsPins	32	static
+../board/pin_mux.c:166:6:BOARD_InitDEBUG_UARTPins	16	static
+../board/pin_mux.c:225:6:BOARD_InitSWD_DEBUGPins	24	static
+../board/pin_mux.c:297:6:BOARD_InitI2CPins	16	static
+../board/pin_mux.c:357:6:BOARD_InitBUTTONsPins	24	static
+../board/pin_mux.c:422:6:BOARD_InitNeopixelsPins	8	static

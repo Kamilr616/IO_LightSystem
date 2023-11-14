@@ -1,0 +1,17 @@
+../drivers/fsl_clock.h:477:24:CLOCK_GetCoreSysClkFreq	8	static
+../drivers/fsl_clock.h:505:24:CLOCK_GetLPOscFreq	8	static
+../drivers/fsl_clock.h:513:24:CLOCK_GetExtClkFreq	8	static
+../drivers/fsl_clock.c:52:17:CLOCK_GetFRGInputClkFreq	24	static
+../drivers/fsl_clock.c:72:13:CLOCK_SetFRGClkFreq	56	static
+../drivers/fsl_clock.c:92:13:CLOCK_UpdateClkSrc	16	static
+../drivers/fsl_clock.c:108:6:CLOCK_SetFRG0ClkFreq	16	static
+../drivers/fsl_clock.c:116:10:CLOCK_GetFRG0ClkFreq	32	static
+../drivers/fsl_clock.c:125:10:CLOCK_GetMainClkFreq	16	static
+../drivers/fsl_clock.c:157:10:CLOCK_GetFroFreq	8	static
+../drivers/fsl_clock.c:165:10:CLOCK_GetClockOutClkFreq	16	static
+../drivers/fsl_clock.c:198:10:CLOCK_GetUart0ClkFreq	16	static
+../drivers/fsl_clock.c:228:10:CLOCK_GetUart1ClkFreq	16	static
+../drivers/fsl_clock.c:258:10:CLOCK_GetFreq	24	static
+../drivers/fsl_clock.c:297:6:CLOCK_InitExtClkin	16	static
+../drivers/fsl_clock.c:310:6:CLOCK_SetMainClkSrc	24	static
+../drivers/fsl_clock.c:323:6:CLOCK_SetFroOscFreq	16	static

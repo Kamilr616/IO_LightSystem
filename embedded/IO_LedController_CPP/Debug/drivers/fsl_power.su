@@ -1,0 +1,10 @@
+/home/kamil/PycharmProjects/IO_LightSystem/embedded/IO_LedController_CPP/CMSIS/core_cm0plus.h:741:22:__NVIC_EnableIRQ	16	static
+/home/kamil/PycharmProjects/IO_LightSystem/embedded/IO_LedController_CPP/CMSIS/core_cm0plus.h:779:22:__NVIC_DisableIRQ	16	static
+../drivers/fsl_common_arm.h:514:24:EnableIRQ	24	static
+../drivers/fsl_common_arm.h:558:24:DisableIRQ	24	static
+../drivers/fsl_power.c:25:6:POWER_EnterSleep	24	static
+../drivers/fsl_power.c:50:6:POWER_EnterDeepSleep	32	static
+../drivers/fsl_power.c:81:6:POWER_EnterPowerDown	32	static
+../drivers/fsl_power.c:111:6:POWER_EnterDeepPowerDownMode	24	static
+../drivers/fsl_power.c:135:6:EnableDeepSleepIRQ	24	static
+../drivers/fsl_power.c:153:6:DisableDeepSleepIRQ	24	static

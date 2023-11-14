@@ -1,0 +1,2 @@
+/home/kamil/PycharmProjects/IO_LightSystem/embedded/IO_LedController_CPP/drivers/fsl_clock.h:390:20:CLOCK_Select	16	static
+../board/board.c:25:10:BOARD_InitDebugConsole	16	static

@@ -1,0 +1,3 @@
+../drivers/fsl_swm.c:79:6:SWM_SetMovablePinSelect	32	static
+../drivers/fsl_swm.c:109:6:SWM_SetFixedMovablePinSelect	24	static
+../drivers/fsl_swm.c:138:6:SWM_SetFixedPinSelect	24	static

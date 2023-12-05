@@ -29,6 +29,7 @@ public:
 	void shiftLeft(uint32_t number = 1U);
 	void shiftRight(uint32_t number = 1U);
 	void animate1(uint32_t color = 0x00ff00);
+	void setPosition(uint32_t position=0U, uint32_t color=0x00ff00);
 	void pendulum(uint32_t number);
 
 private:

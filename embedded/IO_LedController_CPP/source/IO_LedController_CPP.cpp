@@ -17,6 +17,7 @@
 #include "LPC804.h"
 #include "fsl_debug_console.h"
 #include "Neopixels.h"
+#include "fsl_usart.h"
 
 Neopixels *neopixels;
 
@@ -41,7 +42,6 @@ std::vector<uint32_t> colors = {
 std::vector<uint32_t> colorsY = {
 		// GRB
 		0xffff00, //yellow
-		0xffff00, //yellow
 		0x000000, //black
 		0x000000, //black
 		0x000000, //black
@@ -60,7 +60,7 @@ extern "C" {
 
 void SysTick_Handler(void)
 {
-	neopixels->pendulum(9);
+	neopixels->shiftRight();
 }
 
 #if defined (__cplusplus)
@@ -78,14 +78,61 @@ int main(void) {
 #ifndef BOARD_INIT_DEBUG_CONSOLE_PERIPHERAL
 	/* Init FSL debug console. */
 	BOARD_InitDebugConsole();
+//	usart_config_t user_config;
+//	USART_GetDefaultConfig(&user_config);
+//	user_config.baudRate_Bps = 9600U;
+//	user_config.enableTx = true;
+//	user_config.enableRx = true;
+//	USART_Init(USART0,&user_config,120000000U);
+
 #endif
+	char c;
 
 	neopixels = new Neopixels(SPI0_PERIPHERAL);
-	neopixels->writeColors(colorsY);
-
-	SysTick_Config(SystemCoreClock / 5);
-
+	neopixels->writeColors(colors);
+	neopixels->sendData();
+	//SysTick_Config(SystemCoreClock / 5);
+	PRINTF("Start\r\n");
 	while(1) {
+
+		c = GETCHAR();
+		PRINTF("Pozycja: %c\r\n", c);
+		//USART_ReadBlocking(USART0, input, 5);
+		switch (c) {
+		        case '0':
+		            neopixels->setPosition(0, 0xffff00);
+		            break;
+		        case '1':
+		            neopixels->setPosition(1, 0xffff00);
+		            break;
+		        case '2':
+		            neopixels->setPosition(2, 0xffff00);
+		            break;
+		        case '3':
+		            neopixels->setPosition(3, 0xffff00);
+		            break;
+		        case '4':
+		            neopixels->setPosition(4, 0xffff00);
+		            break;
+		        case '5':
+		            neopixels->setPosition(5, 0xffff00);
+		            break;
+		        case '6':
+		            neopixels->setPosition(6, 0xffff00);
+		            break;
+		        case '7':
+		            neopixels->setPosition(7, 0xffff00);
+		            break;
+		        case '8':
+		            neopixels->setPosition(8, 0xffff00);
+		            break;
+		        case '9':
+		            neopixels->setPosition(9, 0xffff00);
+		            break;
+		        default:
+		            PRINTF("Error: %c\n", c);
+		    }
+
 	}
 	delete neopixels;
 

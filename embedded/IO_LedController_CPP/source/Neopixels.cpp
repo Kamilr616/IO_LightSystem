@@ -46,6 +46,18 @@ void Neopixels::sendData() {
 }
 
 //Animacje
+void Neopixels::setPosition(uint32_t position, uint32_t color) {
+	static uint32_t k=0;
+	for(uint32_t j=0; j<getLedsNumber(); j++) {
+		buffer[j]=0; // leds off
+	}
+	buffer[position]=color;
+
+	if(k>=getLedsNumber()) {
+		k=0;
+	}
+	sendData();
+}
 
 void Neopixels::animate1(uint32_t color) {
 	static uint32_t k=0;

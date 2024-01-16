@@ -46,13 +46,37 @@ void Neopixels::sendData() {
 }
 
 //Animacje
-
-void Neopixels::animate1(uint32_t color) {
+void Neopixels::setPosition(uint32_t position, uint32_t color) {
 	static uint32_t k=0;
 	for(uint32_t j=0; j<getLedsNumber(); j++) {
 		buffer[j]=0; // leds off
 	}
-	buffer[k]=color;
+	buffer[position]=color;
+
+	if(k>=getLedsNumber()) {
+		k=0;
+	}
+	sendData();
+}
+
+void Neopixels::fillColor(uint32_t color) {
+	static uint32_t k=0;
+	for(uint32_t j=0; j<getLedsNumber(); j++) {
+		buffer[j]=color; // leds off
+	}
+	if(k>=getLedsNumber()) {
+		k=0;
+	}
+	sendData();
+}
+
+void Neopixels::animate1(uint32_t color) {
+	static uint32_t k=0;
+	if (k <= 0 ){
+		for(uint32_t j=0; j<getLedsNumber(); j++) {
+		buffer[j]=0; // leds off
+		}
+	}
 	buffer[k++]=color;
 
 	if(k>=getLedsNumber()) {
@@ -70,6 +94,26 @@ void Neopixels::shiftRight(uint32_t number ) {
 	sendData();
 }
 
+void Neopixels::setAnimColor(uint32_t color){
+	animColor = color;
+}
+
+
+void Neopixels::show(){
+	if(countPendulum == 0U){
+		buffer.clear();
+	}
+	if(countPendulum < getLedsNumber()){
+		addColor(animColor);
+		sendData();
+		countPendulum++;
+	}
+	else{
+		countPendulum = 0U;
+	}
+}
+
+
 void Neopixels::pendulum(uint32_t number){
 	if(countPendulum < number){
 		shiftLeft();
@@ -84,4 +128,3 @@ void Neopixels::pendulum(uint32_t number){
 		countPendulum = 1U;
 	}
 }
-

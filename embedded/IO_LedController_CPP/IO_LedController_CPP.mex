@@ -376,11 +376,13 @@
                   <clock_output id="LowPower_clock.outFreq" value="1 MHz" locked="false" accuracy=""/>
                   <clock_output id="SPI0_clock.outFreq" value="12 MHz" locked="false" accuracy=""/>
                   <clock_output id="System_clock.outFreq" value="12 MHz" locked="false" accuracy=""/>
+                  <clock_output id="UART0_clock.outFreq" value="12 MHz" locked="false" accuracy=""/>
                   <clock_output id="WWDT_clock.outFreq" value="1 MHz" locked="false" accuracy=""/>
                   <clock_output id="divto750k_clock.outFreq" value="750 kHz" locked="false" accuracy=""/>
                </clock_outputs>
                <clock_settings>
                   <setting id="SYSCON.SPI0CLKSEL.sel" value="SYSCON.MAINCLKSEL" locked="false"/>
+                  <setting id="SYSCON.UART0CLKSEL.sel" value="SYSCON.MAINCLKSEL" locked="false"/>
                </clock_settings>
                <called_from_default_init>true</called_from_default_init>
             </clock_configuration>
@@ -469,6 +471,16 @@
                   <data type="Version">2.0.1</data>
                </feature>
             </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.drivers.lpc_miniusart" description="Usart Driver is not found in the toolchain/IDE project. The project will not compile!" problem_level="2" source="Peripherals">
+               <feature name="enabled" evaluation="equal">
+                  <data type="Boolean">true</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.drivers.lpc_miniusart" description="An unsupported version of the Usart Driver in the toolchain/IDE project. Required: ${required_value}, actual: ${actual_value}. The project might not compile correctly." problem_level="1" source="Peripherals">
+               <feature name="version" evaluation="equivalent">
+                  <data type="Version">2.5.0</data>
+               </feature>
+            </dependency>
             <dependency resourceType="Tool" resourceId="Clocks" description="The Clocks tool is required by the Peripherals tool, but it is disabled." problem_level="2" source="Peripherals">
                <feature name="enabled" evaluation="equal">
                   <data>true</data>
@@ -512,6 +524,21 @@
                         <data type="Frequency" unit="Hz">0</data>
                      </feature>
                   </dependency>
+                  <dependency resourceType="ClockOutput" resourceId="UART0_clock" description="UART0 clock is inactive." problem_level="2" source="Peripherals:BOARD_InitPeripherals">
+                     <feature name="frequency" evaluation="greaterThan">
+                        <data type="Frequency" unit="Hz">0</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="USART0.usart_rxd" description="Signal RXD is not routed." problem_level="1" source="Peripherals:BOARD_InitPeripherals">
+                     <feature name="routed" evaluation="equal">
+                        <data type="Boolean">true</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PeripheralUnifiedSignal" resourceId="USART0.usart_txd" description="Signal TXD is not routed." problem_level="1" source="Peripherals:BOARD_InitPeripherals">
+                     <feature name="routed" evaluation="equal">
+                        <data type="Boolean">true</data>
+                     </feature>
+                  </dependency>
                </dependencies>
                <instances>
                   <instance name="SPI0" uuid="5c7a2902-ad98-4a80-8cae-ced0e3a85849" type="lpc_minispi" type_id="lpc_minispi_f45b6e04ed20bff9f52c4f4d863b265d" mode="polling" peripheral="SPI0" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
@@ -537,6 +564,25 @@
                                  <setting name="transferDelay" value="0"/>
                               </struct>
                            </struct>
+                        </struct>
+                     </config_set>
+                  </instance>
+                  <instance name="USART0" uuid="0e44b8aa-a129-4f40-afac-281a02d1c7ce" type="lpc_miniusart" type_id="lpc_miniusart_8dab9e8c7daef1c58d159a792e99242b" mode="polling" peripheral="USART0" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
+                     <config_set name="fsl_usart" quick_selection="QS_USART_1">
+                        <struct name="usartConfig">
+                           <setting name="clockSource" value="FunctionClock"/>
+                           <setting name="clockSourceFreq" value="ClocksTool_DefaultInit"/>
+                           <setting name="baudRate_Bps" value="9600"/>
+                           <setting name="syncMode" value="kUSART_SyncModeDisabled"/>
+                           <setting name="parityMode" value="kUSART_ParityDisabled"/>
+                           <setting name="stopBitCount" value="kUSART_OneStopBit"/>
+                           <setting name="bitCountPerChar" value="kUSART_8BitsPerChar"/>
+                           <setting name="loopback" value="false"/>
+                           <setting name="enableRx" value="true"/>
+                           <setting name="enableTx" value="true"/>
+                           <setting name="clockPolarity" value="kUSART_RxSampleOnFallingEdge"/>
+                           <setting name="enableContinuousSCLK" value="false"/>
+                           <setting name="enableHardwareFlowControl" value="false"/>
                         </struct>
                      </config_set>
                   </instance>

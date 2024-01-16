@@ -23,7 +23,8 @@ source/IO_LedController_CPP.o source/IO_LedController_CPP.d: \
  /home/kamil/PycharmProjects/IO_LightSystem/embedded/IO_LedController_CPP/board/clock_config.h \
  /home/kamil/PycharmProjects/IO_LightSystem/embedded/IO_LedController_CPP/device/LPC804.h \
  /home/kamil/PycharmProjects/IO_LightSystem/embedded/IO_LedController_CPP/utilities/fsl_debug_console.h \
- ../source/Neopixels.h
+ ../source/Neopixels.h \
+ /home/kamil/PycharmProjects/IO_LightSystem/embedded/IO_LedController_CPP/drivers/fsl_usart.h
 /home/kamil/PycharmProjects/IO_LightSystem/embedded/IO_LedController_CPP/board/board.h:
 /home/kamil/PycharmProjects/IO_LightSystem/embedded/IO_LedController_CPP/board/clock_config.h:
 /home/kamil/PycharmProjects/IO_LightSystem/embedded/IO_LedController_CPP/drivers/fsl_common.h:
@@ -48,3 +49,4 @@ source/IO_LedController_CPP.o source/IO_LedController_CPP.d: \
 /home/kamil/PycharmProjects/IO_LightSystem/embedded/IO_LedController_CPP/device/LPC804.h:
 /home/kamil/PycharmProjects/IO_LightSystem/embedded/IO_LedController_CPP/utilities/fsl_debug_console.h:
 ../source/Neopixels.h:
+/home/kamil/PycharmProjects/IO_LightSystem/embedded/IO_LedController_CPP/drivers/fsl_usart.h:

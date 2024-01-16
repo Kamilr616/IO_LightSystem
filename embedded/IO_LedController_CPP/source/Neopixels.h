@@ -29,7 +29,15 @@ public:
 	void shiftLeft(uint32_t number = 1U);
 	void shiftRight(uint32_t number = 1U);
 	void animate1(uint32_t color = 0x00ff00);
+	void setPosition(uint32_t position=0U, uint32_t color=0x00ff00);
 	void pendulum(uint32_t number);
+	void fillColor(uint32_t color);
+	void setAnimColor(uint32_t color);
+	void show();
+
+	uint32_t animColor = 0x00ff00;
+
+
 
 private:
 	SPI_Type *SPI_base=NULL;

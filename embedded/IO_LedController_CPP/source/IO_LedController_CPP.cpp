@@ -96,36 +96,38 @@ int main(void) {
 		        }
 		    }
 		    if (isValidInput) {
-		        switch (c) {
-					case 'A':
-						neopixels->setAnimColor(0xff0000);
-						break;
-					case 'B':
-						neopixels->setAnimColor(0x00ff00);
-						break;
-					case 'C':
-						neopixels->setAnimColor(0x0080ff);
-						break;
-					case 'D':
-						neopixels->setAnimColor(0xff00ff);
-						break;
-					case 'E':
-						neopixels->setAnimColor(0x0000ff);
-						break;
-					case 'F':
-						neopixels->setAnimColor(0x00ffff);
-						break;
-					case 'G':
-						neopixels->setAnimColor(0xff8000);
-						break;
-					default:
-						PRINTF("Error: %c\n", c);
-						break;
-				}
+		    	switch (c) {
+		    	    case 'A':
+		    	        neopixels->setAnimColor(0xff0000);  // Thumb_Up: Zielony
+		    	        break;
+		    	    case 'B':
+		    	        neopixels->setAnimColor(0x0080ff);  // Thumb_Down: Purpurowy
+		    	        break;
+		    	    case 'C':
+		    	        neopixels->setAnimColor(0x0000ff);  // Open_Palm: Niebieski
+		    	        break;
+		    	    case 'D':
+		    	        neopixels->setAnimColor(0xffff00);  // Closed_Fist: Żółty
+		    	        break;
+		    	    case 'E':
+		    	        neopixels->setAnimColor(0xff0080);  // Victory: Spring green
+		    	        break;
+		    	    case 'F':
+		    	        neopixels->setAnimColor(0xff00ff);  // Pointing_Up: Cyjanowy
+		    	        break;
+		    	    case 'G':
+		    	        neopixels->setAnimColor(0x00ff00);  // ILoveYou: Czerwony
+		    	        break;
+		    	    default:
+		    	        PRINTF("Error: %c\n", c);
+		    	        neopixels->setAnimColor(0xffffff);
+		    	        break;
+		    	}
+
 		old_c = c;
 		for(uint32_t j=0; j<(neopixels->getLedsNumber()); j++) {
 			neopixels->animate1(neopixels->animColor);
-			delay_ms(300);
+			delay_ms(280);
 		}
 		}
 		}

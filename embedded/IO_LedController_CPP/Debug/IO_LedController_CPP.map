@@ -2995,7 +2995,7 @@ END GROUP
  *(SORT_BY_ALIGNMENT(.rodata.$Flash2.*))
  *(SORT_BY_ALIGNMENT(.rodata.$BOOT_FLASH.*))
 
-.text           0x0000000000000000     0x4198
+.text           0x0000000000000000     0x41ac
  FILL mask 0xff
                 0x0000000000000000                __vectors_start__ = ABSOLUTE (.)
  *(SORT_BY_ALIGNMENT(.isr_vector))
@@ -3005,10 +3005,10 @@ END GROUP
                 0x00000000000000c0                . = ALIGN (0x4)
                 0x00000000000000c0                __section_table_start = .
                 0x00000000000000c0                __data_section_table = .
-                0x00000000000000c0        0x4 LONG 0x41a0 LOADADDR (.data)
+                0x00000000000000c0        0x4 LONG 0x41b4 LOADADDR (.data)
                 0x00000000000000c4        0x4 LONG 0x10000000 ADDR (.data)
                 0x00000000000000c8        0x4 LONG 0x5c SIZEOF (.data)
-                0x00000000000000cc        0x4 LONG 0x41a0 LOADADDR (.data_RAM2)
+                0x00000000000000cc        0x4 LONG 0x41b4 LOADADDR (.data_RAM2)
                 0x00000000000000d0        0x4 LONG 0x10000fe0 ADDR (.data_RAM2)
                 0x00000000000000d4        0x4 LONG 0x0 SIZEOF (.data_RAM2)
                 0x00000000000000d8                __data_section_table_end = .
@@ -3119,821 +3119,821 @@ END GROUP
  .text.DbgConsole_Getchar
                 0x0000000000000440       0x3c ./utilities/fsl_debug_console.o
                 0x0000000000000440                DbgConsole_Getchar
- .text.main     0x000000000000047c      0x204 ./source/IO_LedController_CPP.o
+ .text.main     0x000000000000047c      0x218 ./source/IO_LedController_CPP.o
                 0x000000000000047c                main
  .text._ZNSt6vectorImSaImEE17_S_check_init_lenEjRKS0_
-                0x0000000000000680       0x50 ./source/IO_LedController_CPP.o
-                0x0000000000000680                std::vector<unsigned long, std::allocator<unsigned long> >::_S_check_init_len(unsigned int, std::allocator<unsigned long> const&)
+                0x0000000000000694       0x50 ./source/IO_LedController_CPP.o
+                0x0000000000000694                std::vector<unsigned long, std::allocator<unsigned long> >::_S_check_init_len(unsigned int, std::allocator<unsigned long> const&)
  .text._ZNSt6vectorImSaImEE11_S_max_sizeERKS0_
-                0x00000000000006d0       0x38 ./source/IO_LedController_CPP.o
-                0x00000000000006d0                std::vector<unsigned long, std::allocator<unsigned long> >::_S_max_size(std::allocator<unsigned long> const&)
+                0x00000000000006e4       0x38 ./source/IO_LedController_CPP.o
+                0x00000000000006e4                std::vector<unsigned long, std::allocator<unsigned long> >::_S_max_size(std::allocator<unsigned long> const&)
  .text._ZNKSt15__new_allocatorImE11_M_max_sizeEv
-                0x0000000000000708       0x18 ./source/IO_LedController_CPP.o
-                0x0000000000000708                std::__new_allocator<unsigned long>::_M_max_size() const
+                0x000000000000071c       0x18 ./source/IO_LedController_CPP.o
+                0x000000000000071c                std::__new_allocator<unsigned long>::_M_max_size() const
  .text._Z41__static_initialization_and_destruction_0ii
-                0x0000000000000720       0x84 ./source/IO_LedController_CPP.o
+                0x0000000000000734       0x84 ./source/IO_LedController_CPP.o
  .text._GLOBAL__sub_I_neopixels
-                0x00000000000007a4       0x18 ./source/IO_LedController_CPP.o
+                0x00000000000007b8       0x18 ./source/IO_LedController_CPP.o
  .text.SPI_WriteConfigFlags
-                0x00000000000007bc       0x2c ./source/Neopixels.o
+                0x00000000000007d0       0x2c ./source/Neopixels.o
  .text._ZN9NeopixelsC2EP8SPI_Type
-                0x00000000000007e8       0x50 ./source/Neopixels.o
-                0x00000000000007e8                Neopixels::Neopixels(SPI_Type*)
-                0x00000000000007e8                Neopixels::Neopixels(SPI_Type*)
+                0x00000000000007fc       0x50 ./source/Neopixels.o
+                0x00000000000007fc                Neopixels::Neopixels(SPI_Type*)
+                0x00000000000007fc                Neopixels::Neopixels(SPI_Type*)
  .text._ZN9NeopixelsD2Ev
-                0x0000000000000838       0x30 ./source/Neopixels.o
-                0x0000000000000838                Neopixels::~Neopixels()
-                0x0000000000000838                Neopixels::~Neopixels()
+                0x000000000000084c       0x30 ./source/Neopixels.o
+                0x000000000000084c                Neopixels::~Neopixels()
+                0x000000000000084c                Neopixels::~Neopixels()
  .text._ZN9Neopixels8animate1Em
-                0x0000000000000868       0x9c ./source/Neopixels.o
-                0x0000000000000868                Neopixels::animate1(unsigned long)
+                0x000000000000087c       0x9c ./source/Neopixels.o
+                0x000000000000087c                Neopixels::animate1(unsigned long)
  .text.HardFault_Handler
-                0x0000000000000904       0x38 ./source/semihost_hardfault.o
-                0x0000000000000904                HardFault_Handler
+                0x0000000000000918       0x38 ./source/semihost_hardfault.o
+                0x0000000000000918                HardFault_Handler
  .text.CLOCK_GetLPOscFreq
-                0x000000000000093c       0x14 ./drivers/fsl_clock.o
- .text.CLOCK_GetExtClkFreq
                 0x0000000000000950       0x14 ./drivers/fsl_clock.o
+ .text.CLOCK_GetExtClkFreq
+                0x0000000000000964       0x14 ./drivers/fsl_clock.o
  .text.CLOCK_SetFRGClkFreq
-                0x0000000000000964       0xac ./drivers/fsl_clock.o
+                0x0000000000000978       0xac ./drivers/fsl_clock.o
  .text.CLOCK_UpdateClkSrc
-                0x0000000000000a10       0x58 ./drivers/fsl_clock.o
+                0x0000000000000a24       0x58 ./drivers/fsl_clock.o
  .text.CLOCK_SetFRG0ClkFreq
-                0x0000000000000a68       0x24 ./drivers/fsl_clock.o
-                0x0000000000000a68                CLOCK_SetFRG0ClkFreq
+                0x0000000000000a7c       0x24 ./drivers/fsl_clock.o
+                0x0000000000000a7c                CLOCK_SetFRG0ClkFreq
  .text.CLOCK_GetMainClkFreq
-                0x0000000000000a8c       0x74 ./drivers/fsl_clock.o
-                0x0000000000000a8c                CLOCK_GetMainClkFreq
+                0x0000000000000aa0       0x74 ./drivers/fsl_clock.o
+                0x0000000000000aa0                CLOCK_GetMainClkFreq
  .text.CLOCK_GetFroFreq
-                0x0000000000000b00       0x14 ./drivers/fsl_clock.o
-                0x0000000000000b00                CLOCK_GetFroFreq
+                0x0000000000000b14       0x14 ./drivers/fsl_clock.o
+                0x0000000000000b14                CLOCK_GetFroFreq
  .text.CLOCK_SetMainClkSrc
-                0x0000000000000b14       0x4c ./drivers/fsl_clock.o
-                0x0000000000000b14                CLOCK_SetMainClkSrc
+                0x0000000000000b28       0x4c ./drivers/fsl_clock.o
+                0x0000000000000b28                CLOCK_SetMainClkSrc
  .text.CLOCK_SetFroOscFreq
-                0x0000000000000b60       0x44 ./drivers/fsl_clock.o
-                0x0000000000000b60                CLOCK_SetFroOscFreq
+                0x0000000000000b74       0x44 ./drivers/fsl_clock.o
+                0x0000000000000b74                CLOCK_SetFroOscFreq
  .text.RESET_SetPeripheralReset
-                0x0000000000000ba4       0x7c ./drivers/fsl_reset.o
+                0x0000000000000bb8       0x7c ./drivers/fsl_reset.o
  .text.RESET_ClearPeripheralReset
-                0x0000000000000c20       0x78 ./drivers/fsl_reset.o
+                0x0000000000000c34       0x78 ./drivers/fsl_reset.o
  .text.CLOCK_EnableClock
-                0x0000000000000c98       0x54 ./drivers/fsl_spi.o
+                0x0000000000000cac       0x54 ./drivers/fsl_spi.o
  .text.SPI_GetInstance
-                0x0000000000000cec       0x6c ./drivers/fsl_spi.o
-                0x0000000000000cec                SPI_GetInstance
+                0x0000000000000d00       0x6c ./drivers/fsl_spi.o
+                0x0000000000000d00                SPI_GetInstance
  .text.SPI_SetDummyData
-                0x0000000000000d58       0x34 ./drivers/fsl_spi.o
-                0x0000000000000d58                SPI_SetDummyData
+                0x0000000000000d6c       0x34 ./drivers/fsl_spi.o
+                0x0000000000000d6c                SPI_SetDummyData
  .text.SPI_SetTransferDelay
-                0x0000000000000d8c       0x64 ./drivers/fsl_spi.o
-                0x0000000000000d8c                SPI_SetTransferDelay
+                0x0000000000000da0       0x64 ./drivers/fsl_spi.o
+                0x0000000000000da0                SPI_SetTransferDelay
  .text.SPI_MasterInit
-                0x0000000000000df0      0x120 ./drivers/fsl_spi.o
-                0x0000000000000df0                SPI_MasterInit
+                0x0000000000000e04      0x120 ./drivers/fsl_spi.o
+                0x0000000000000e04                SPI_MasterInit
  .text.SPI_MasterSetBaudRate
-                0x0000000000000f10       0x80 ./drivers/fsl_spi.o
-                0x0000000000000f10                SPI_MasterSetBaudRate
+                0x0000000000000f24       0x80 ./drivers/fsl_spi.o
+                0x0000000000000f24                SPI_MasterSetBaudRate
  .text.SPI_CommonIRQHandler
-                0x0000000000000f90       0x40 ./drivers/fsl_spi.o
+                0x0000000000000fa4       0x40 ./drivers/fsl_spi.o
  .text.SPI0_DriverIRQHandler
-                0x0000000000000fd0       0x44 ./drivers/fsl_spi.o
-                0x0000000000000fd0                SPI0_DriverIRQHandler
+                0x0000000000000fe4       0x44 ./drivers/fsl_spi.o
+                0x0000000000000fe4                SPI0_DriverIRQHandler
  .text.SWM_SetMovablePinSelect
-                0x0000000000001014       0xa8 ./drivers/fsl_swm.o
-                0x0000000000001014                SWM_SetMovablePinSelect
+                0x0000000000001028       0xa8 ./drivers/fsl_swm.o
+                0x0000000000001028                SWM_SetMovablePinSelect
  .text.CLOCK_EnableClock
-                0x00000000000010bc       0x54 ./drivers/fsl_usart.o
+                0x00000000000010d0       0x54 ./drivers/fsl_usart.o
  .text.USART_EnableContinuousSCLK
-                0x0000000000001110       0x40 ./drivers/fsl_usart.o
+                0x0000000000001124       0x40 ./drivers/fsl_usart.o
  .text.USART_GetInstance
-                0x0000000000001150       0x58 ./drivers/fsl_usart.o
-                0x0000000000001150                USART_GetInstance
+                0x0000000000001164       0x58 ./drivers/fsl_usart.o
+                0x0000000000001164                USART_GetInstance
  .text.USART_Init
-                0x00000000000011a8      0x138 ./drivers/fsl_usart.o
-                0x00000000000011a8                USART_Init
+                0x00000000000011bc      0x138 ./drivers/fsl_usart.o
+                0x00000000000011bc                USART_Init
  .text.USART_GetDefaultConfig
-                0x00000000000012e0       0x80 ./drivers/fsl_usart.o
-                0x00000000000012e0                USART_GetDefaultConfig
+                0x00000000000012f4       0x80 ./drivers/fsl_usart.o
+                0x00000000000012f4                USART_GetDefaultConfig
  .text.USART_SetBaudRate
-                0x0000000000001360      0x15c ./drivers/fsl_usart.o
-                0x0000000000001360                USART_SetBaudRate
+                0x0000000000001374      0x15c ./drivers/fsl_usart.o
+                0x0000000000001374                USART_SetBaudRate
  .text.USART_WriteBlocking
-                0x00000000000014bc       0x70 ./drivers/fsl_usart.o
-                0x00000000000014bc                USART_WriteBlocking
+                0x00000000000014d0       0x70 ./drivers/fsl_usart.o
+                0x00000000000014d0                USART_WriteBlocking
  .text.USART_ReadBlocking
-                0x000000000000152c       0xd0 ./drivers/fsl_usart.o
-                0x000000000000152c                USART_ReadBlocking
+                0x0000000000001540       0xd0 ./drivers/fsl_usart.o
+                0x0000000000001540                USART_ReadBlocking
  .text.USART0_DriverIRQHandler
-                0x00000000000015fc       0x24 ./drivers/fsl_usart.o
-                0x00000000000015fc                USART0_DriverIRQHandler
+                0x0000000000001610       0x24 ./drivers/fsl_usart.o
+                0x0000000000001610                USART0_DriverIRQHandler
  .text.USART1_DriverIRQHandler
-                0x0000000000001620       0x24 ./drivers/fsl_usart.o
-                0x0000000000001620                USART1_DriverIRQHandler
+                0x0000000000001634       0x24 ./drivers/fsl_usart.o
+                0x0000000000001634                USART1_DriverIRQHandler
  .text.SystemInit
-                0x0000000000001644       0x2c ./device/system_LPC804.o
-                0x0000000000001644                SystemInit
+                0x0000000000001658       0x2c ./device/system_LPC804.o
+                0x0000000000001658                SystemInit
  .text.HAL_UartGetStatus
-                0x0000000000001670       0x20 ./component/uart/fsl_adapter_miniusart.o
+                0x0000000000001684       0x20 ./component/uart/fsl_adapter_miniusart.o
  .text.HAL_UartInit
-                0x0000000000001690      0x134 ./component/uart/fsl_adapter_miniusart.o
-                0x0000000000001690                HAL_UartInit
+                0x00000000000016a4      0x134 ./component/uart/fsl_adapter_miniusart.o
+                0x00000000000016a4                HAL_UartInit
  .text.HAL_UartReceiveBlocking
-                0x00000000000017c4       0x90 ./component/uart/fsl_adapter_miniusart.o
-                0x00000000000017c4                HAL_UartReceiveBlocking
+                0x00000000000017d8       0x90 ./component/uart/fsl_adapter_miniusart.o
+                0x00000000000017d8                HAL_UartReceiveBlocking
  .text.HAL_UartSendBlocking
-                0x0000000000001854       0x84 ./component/uart/fsl_adapter_miniusart.o
-                0x0000000000001854                HAL_UartSendBlocking
+                0x0000000000001868       0x84 ./component/uart/fsl_adapter_miniusart.o
+                0x0000000000001868                HAL_UartSendBlocking
  .text.CLOCK_Select
-                0x00000000000018d8       0x38 ./board/board.o
+                0x00000000000018ec       0x38 ./board/board.o
  .text.BOARD_InitDebugConsole
-                0x0000000000001910       0x58 ./board/board.o
-                0x0000000000001910                BOARD_InitDebugConsole
+                0x0000000000001924       0x58 ./board/board.o
+                0x0000000000001924                BOARD_InitDebugConsole
  .text.CLOCK_Select
-                0x0000000000001968       0x38 ./board/clock_config.o
+                0x000000000000197c       0x38 ./board/clock_config.o
  .text.CLOCK_SetCoreSysClkDiv
-                0x00000000000019a0       0x4c ./board/clock_config.o
+                0x00000000000019b4       0x4c ./board/clock_config.o
  .text.POWER_DisablePD
-                0x00000000000019ec       0x2c ./board/clock_config.o
+                0x0000000000001a00       0x2c ./board/clock_config.o
  .text.BOARD_BootClockFRO18M
-                0x0000000000001a18       0x74 ./board/clock_config.o
-                0x0000000000001a18                BOARD_BootClockFRO18M
+                0x0000000000001a2c       0x74 ./board/clock_config.o
+                0x0000000000001a2c                BOARD_BootClockFRO18M
  .text.SPI0_init
-                0x0000000000001a8c       0x24 ./board/peripherals.o
+                0x0000000000001aa0       0x24 ./board/peripherals.o
  .text.CLOCK_EnableClock
-                0x0000000000001ab0       0x54 ./board/pin_mux.o
+                0x0000000000001ac4       0x54 ./board/pin_mux.o
  .text.CLOCK_DisableClock
-                0x0000000000001b04       0x58 ./board/pin_mux.o
+                0x0000000000001b18       0x58 ./board/pin_mux.o
  .text.BOARD_InitDEBUG_UARTPins
-                0x0000000000001b5c       0x60 ./board/pin_mux.o
-                0x0000000000001b5c                BOARD_InitDEBUG_UARTPins
+                0x0000000000001b70       0x60 ./board/pin_mux.o
+                0x0000000000001b70                BOARD_InitDEBUG_UARTPins
  .text.BOARD_InitNeopixelsPins
-                0x0000000000001bbc       0x28 ./board/pin_mux.o
-                0x0000000000001bbc                BOARD_InitNeopixelsPins
- .text          0x0000000000001be4      0x114 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
-                0x0000000000001be4                __udivsi3
-                0x0000000000001be4                __aeabi_uidiv
-                0x0000000000001cf0                __aeabi_uidivmod
- .text          0x0000000000001cf8        0x4 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
-                0x0000000000001cf8                __aeabi_ldiv0
-                0x0000000000001cf8                __aeabi_idiv0
- .text          0x0000000000001cfc       0x40 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_aeabi_uldivmod.o)
-                0x0000000000001cfc                __aeabi_uldivmod
+                0x0000000000001bd0       0x28 ./board/pin_mux.o
+                0x0000000000001bd0                BOARD_InitNeopixelsPins
+ .text          0x0000000000001bf8      0x114 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+                0x0000000000001bf8                __udivsi3
+                0x0000000000001bf8                __aeabi_uidiv
+                0x0000000000001d04                __aeabi_uidivmod
+ .text          0x0000000000001d0c        0x4 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+                0x0000000000001d0c                __aeabi_ldiv0
+                0x0000000000001d0c                __aeabi_idiv0
+ .text          0x0000000000001d10       0x40 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_aeabi_uldivmod.o)
+                0x0000000000001d10                __aeabi_uldivmod
  .text.__udivmoddi4
-                0x0000000000001d3c      0x198 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
-                0x0000000000001d3c                __udivmoddi4
- .text          0x0000000000001ed4       0x18 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_clzdi2.o)
-                0x0000000000001ed4                __clzdi2
- .text          0x0000000000001eec       0x3c /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_clzsi2.o)
-                0x0000000000001eec                __clzsi2
+                0x0000000000001d50      0x198 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
+                0x0000000000001d50                __udivmoddi4
+ .text          0x0000000000001ee8       0x18 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_clzdi2.o)
+                0x0000000000001ee8                __clzdi2
+ .text          0x0000000000001f00       0x3c /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_clzsi2.o)
+                0x0000000000001f00                __clzsi2
  .text.__libc_init_array
-                0x0000000000001f28       0x48 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-init.o)
-                0x0000000000001f28                __libc_init_array
- .text.malloc   0x0000000000001f70       0x14 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-malloc.o)
-                0x0000000000001f70                malloc
- .text.free     0x0000000000001f84       0x14 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-malloc.o)
-                0x0000000000001f84                free
+                0x0000000000001f3c       0x48 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-init.o)
+                0x0000000000001f3c                __libc_init_array
+ .text.malloc   0x0000000000001f84       0x14 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-malloc.o)
+                0x0000000000001f84                malloc
+ .text.free     0x0000000000001f98       0x14 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-malloc.o)
+                0x0000000000001f98                free
  .text.sbrk_aligned
-                0x0000000000001f98       0x44 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-mallocr.o)
+                0x0000000000001fac       0x44 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-mallocr.o)
  .text._malloc_r
-                0x0000000000001fdc       0xf4 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-mallocr.o)
-                0x0000000000001fdc                _malloc_r
+                0x0000000000001ff0       0xf4 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-mallocr.o)
+                0x0000000000001ff0                _malloc_r
  .text.__malloc_lock
-                0x00000000000020d0       0x10 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-mlock.o)
-                0x00000000000020d0                __malloc_lock
+                0x00000000000020e4       0x10 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-mlock.o)
+                0x00000000000020e4                __malloc_lock
  .text.__malloc_unlock
-                0x00000000000020e0       0x10 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-mlock.o)
-                0x00000000000020e0                __malloc_unlock
- .text._sbrk_r  0x00000000000020f0       0x24 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-sbrkr.o)
-                0x00000000000020f0                _sbrk_r
- .text.__errno  0x0000000000002114        0xc /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-errno.o)
-                0x0000000000002114                __errno
- .text._free_r  0x0000000000002120       0x94 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-freer.o)
-                0x0000000000002120                _free_r
- .text._sbrk    0x00000000000021b4       0x40 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_nohost.a(_cr_sbrk.o)
-                0x00000000000021b4                _sbrk
+                0x00000000000020f4       0x10 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-mlock.o)
+                0x00000000000020f4                __malloc_unlock
+ .text._sbrk_r  0x0000000000002104       0x24 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-sbrkr.o)
+                0x0000000000002104                _sbrk_r
+ .text.__errno  0x0000000000002128        0xc /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-errno.o)
+                0x0000000000002128                __errno
+ .text._free_r  0x0000000000002134       0x94 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-freer.o)
+                0x0000000000002134                _free_r
+ .text._sbrk    0x00000000000021c8       0x40 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_nohost.a(_cr_sbrk.o)
+                0x00000000000021c8                _sbrk
  .text.__check_heap_overflow
-                0x00000000000021f4       0x18 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_nohost.a(_cr_check_heap.o)
-                0x00000000000021f4                __check_heap_overflow
+                0x0000000000002208       0x18 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_nohost.a(_cr_check_heap.o)
+                0x0000000000002208                __check_heap_overflow
  .text.register_tm_clones
-                0x000000000000220c       0x28 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x0000000000002220       0x28 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
  .text.frame_dummy
-                0x0000000000002234       0x24 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x0000000000002248       0x24 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
  .text.DbgConsole_Printf
-                0x0000000000002258       0x32 ./utilities/fsl_debug_console.o
-                0x0000000000002258                DbgConsole_Printf
+                0x000000000000226c       0x32 ./utilities/fsl_debug_console.o
+                0x000000000000226c                DbgConsole_Printf
  .text.DbgConsole_PrintfPaddingCharacter
-                0x000000000000228a       0x48 ./utilities/fsl_debug_console.o
+                0x000000000000229e       0x48 ./utilities/fsl_debug_console.o
  .text.DbgConsole_ConvertRadixNumToString
-                0x00000000000022d2       0xc2 ./utilities/fsl_debug_console.o
+                0x00000000000022e6       0xc2 ./utilities/fsl_debug_console.o
  .text.DbgConsole_PrintfFormattedData
-                0x0000000000002394      0x3da ./utilities/fsl_debug_console.o
+                0x00000000000023a8      0x3da ./utilities/fsl_debug_console.o
  .text.SysTick_Handler
-                0x000000000000276e        0xa ./source/IO_LedController_CPP.o
-                0x000000000000276e                SysTick_Handler
+                0x0000000000002782        0xa ./source/IO_LedController_CPP.o
+                0x0000000000002782                SysTick_Handler
  .text.delay_ms
-                0x0000000000002778       0x2a ./source/IO_LedController_CPP.o
-                0x0000000000002778                delay_ms
+                0x000000000000278c       0x2a ./source/IO_LedController_CPP.o
+                0x000000000000278c                delay_ms
  .text._ZNSaImEC2Ev
-                0x00000000000027a2       0x1a ./source/IO_LedController_CPP.o
-                0x00000000000027a2                std::allocator<unsigned long>::allocator()
-                0x00000000000027a2                std::allocator<unsigned long>::allocator()
+                0x00000000000027b6       0x1a ./source/IO_LedController_CPP.o
+                0x00000000000027b6                std::allocator<unsigned long>::allocator()
+                0x00000000000027b6                std::allocator<unsigned long>::allocator()
  .text._ZNSaImED2Ev
-                0x00000000000027bc       0x1a ./source/IO_LedController_CPP.o
-                0x00000000000027bc                std::allocator<unsigned long>::~allocator()
-                0x00000000000027bc                std::allocator<unsigned long>::~allocator()
+                0x00000000000027d0       0x1a ./source/IO_LedController_CPP.o
+                0x00000000000027d0                std::allocator<unsigned long>::~allocator()
+                0x00000000000027d0                std::allocator<unsigned long>::~allocator()
  .text._ZNSt6vectorImSaImEEC2ESt16initializer_listImERKS0_
-                0x00000000000027d6       0x44 ./source/IO_LedController_CPP.o
-                0x00000000000027d6                std::vector<unsigned long, std::allocator<unsigned long> >::vector(std::initializer_list<unsigned long>, std::allocator<unsigned long> const&)
-                0x00000000000027d6                std::vector<unsigned long, std::allocator<unsigned long> >::vector(std::initializer_list<unsigned long>, std::allocator<unsigned long> const&)
+                0x00000000000027ea       0x44 ./source/IO_LedController_CPP.o
+                0x00000000000027ea                std::vector<unsigned long, std::allocator<unsigned long> >::vector(std::initializer_list<unsigned long>, std::allocator<unsigned long> const&)
+                0x00000000000027ea                std::vector<unsigned long, std::allocator<unsigned long> >::vector(std::initializer_list<unsigned long>, std::allocator<unsigned long> const&)
  .text._ZNSt6vectorImSaImEEC2ERKS1_
-                0x000000000000281a       0x7c ./source/IO_LedController_CPP.o
-                0x000000000000281a                std::vector<unsigned long, std::allocator<unsigned long> >::vector(std::vector<unsigned long, std::allocator<unsigned long> > const&)
-                0x000000000000281a                std::vector<unsigned long, std::allocator<unsigned long> >::vector(std::vector<unsigned long, std::allocator<unsigned long> > const&)
+                0x000000000000282e       0x7c ./source/IO_LedController_CPP.o
+                0x000000000000282e                std::vector<unsigned long, std::allocator<unsigned long> >::vector(std::vector<unsigned long, std::allocator<unsigned long> > const&)
+                0x000000000000282e                std::vector<unsigned long, std::allocator<unsigned long> >::vector(std::vector<unsigned long, std::allocator<unsigned long> > const&)
  .text._ZNSt6vectorImSaImEED2Ev
-                0x0000000000002896       0x36 ./source/IO_LedController_CPP.o
-                0x0000000000002896                std::vector<unsigned long, std::allocator<unsigned long> >::~vector()
-                0x0000000000002896                std::vector<unsigned long, std::allocator<unsigned long> >::~vector()
+                0x00000000000028aa       0x36 ./source/IO_LedController_CPP.o
+                0x00000000000028aa                std::vector<unsigned long, std::allocator<unsigned long> >::~vector()
+                0x00000000000028aa                std::vector<unsigned long, std::allocator<unsigned long> >::~vector()
  .text._ZNSt15__new_allocatorImEC2Ev
-                0x00000000000028cc       0x12 ./source/IO_LedController_CPP.o
-                0x00000000000028cc                std::__new_allocator<unsigned long>::__new_allocator()
-                0x00000000000028cc                std::__new_allocator<unsigned long>::__new_allocator()
+                0x00000000000028e0       0x12 ./source/IO_LedController_CPP.o
+                0x00000000000028e0                std::__new_allocator<unsigned long>::__new_allocator()
+                0x00000000000028e0                std::__new_allocator<unsigned long>::__new_allocator()
  .text._ZNSt15__new_allocatorImED2Ev
-                0x00000000000028de       0x12 ./source/IO_LedController_CPP.o
-                0x00000000000028de                std::__new_allocator<unsigned long>::~__new_allocator()
-                0x00000000000028de                std::__new_allocator<unsigned long>::~__new_allocator()
+                0x00000000000028f2       0x12 ./source/IO_LedController_CPP.o
+                0x00000000000028f2                std::__new_allocator<unsigned long>::~__new_allocator()
+                0x00000000000028f2                std::__new_allocator<unsigned long>::~__new_allocator()
  .text._ZNSt12_Vector_baseImSaImEE12_Vector_implD2Ev
-                0x00000000000028f0       0x1a ./source/IO_LedController_CPP.o
-                0x00000000000028f0                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_impl::~_Vector_impl()
-                0x00000000000028f0                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_impl::~_Vector_impl()
+                0x0000000000002904       0x1a ./source/IO_LedController_CPP.o
+                0x0000000000002904                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_impl::~_Vector_impl()
+                0x0000000000002904                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_impl::~_Vector_impl()
  .text._ZNSt12_Vector_baseImSaImEEC2ERKS0_
-                0x000000000000290a       0x20 ./source/IO_LedController_CPP.o
-                0x000000000000290a                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_base(std::allocator<unsigned long> const&)
-                0x000000000000290a                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_base(std::allocator<unsigned long> const&)
+                0x000000000000291e       0x20 ./source/IO_LedController_CPP.o
+                0x000000000000291e                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_base(std::allocator<unsigned long> const&)
+                0x000000000000291e                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_base(std::allocator<unsigned long> const&)
  .text._ZNSt12_Vector_baseImSaImEED2Ev
-                0x000000000000292a       0x34 ./source/IO_LedController_CPP.o
-                0x000000000000292a                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::~_Vector_base()
-                0x000000000000292a                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::~_Vector_base()
+                0x000000000000293e       0x34 ./source/IO_LedController_CPP.o
+                0x000000000000293e                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::~_Vector_base()
+                0x000000000000293e                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::~_Vector_base()
  .text._ZNKSt16initializer_listImE5beginEv
-                0x000000000000295e       0x14 ./source/IO_LedController_CPP.o
-                0x000000000000295e                std::initializer_list<unsigned long>::begin() const
+                0x0000000000002972       0x14 ./source/IO_LedController_CPP.o
+                0x0000000000002972                std::initializer_list<unsigned long>::begin() const
  .text._ZNKSt16initializer_listImE3endEv
-                0x0000000000002972       0x28 ./source/IO_LedController_CPP.o
-                0x0000000000002972                std::initializer_list<unsigned long>::end() const
+                0x0000000000002986       0x28 ./source/IO_LedController_CPP.o
+                0x0000000000002986                std::initializer_list<unsigned long>::end() const
  .text._ZSt8distanceIPKmENSt15iterator_traitsIT_E15difference_typeES3_S3_
-                0x000000000000299a       0x2a ./source/IO_LedController_CPP.o
-                0x000000000000299a                std::iterator_traits<unsigned long const*>::difference_type std::distance<unsigned long const*>(unsigned long const*, unsigned long const*)
+                0x00000000000029ae       0x2a ./source/IO_LedController_CPP.o
+                0x00000000000029ae                std::iterator_traits<unsigned long const*>::difference_type std::distance<unsigned long const*>(unsigned long const*, unsigned long const*)
  .text._ZNSt6vectorImSaImEE19_M_range_initializeIPKmEEvT_S5_St20forward_iterator_tag
-                0x00000000000029c4       0x7a ./source/IO_LedController_CPP.o
-                0x00000000000029c4                void std::vector<unsigned long, std::allocator<unsigned long> >::_M_range_initialize<unsigned long const*>(unsigned long const*, unsigned long const*, std::forward_iterator_tag)
+                0x00000000000029d8       0x7a ./source/IO_LedController_CPP.o
+                0x00000000000029d8                void std::vector<unsigned long, std::allocator<unsigned long> >::_M_range_initialize<unsigned long const*>(unsigned long const*, unsigned long const*, std::forward_iterator_tag)
  .text._ZNKSt6vectorImSaImEE4sizeEv
-                0x0000000000002a3e       0x1c ./source/IO_LedController_CPP.o
-                0x0000000000002a3e                std::vector<unsigned long, std::allocator<unsigned long> >::size() const
+                0x0000000000002a52       0x1c ./source/IO_LedController_CPP.o
+                0x0000000000002a52                std::vector<unsigned long, std::allocator<unsigned long> >::size() const
  .text._ZNKSt12_Vector_baseImSaImEE19_M_get_Tp_allocatorEv
-                0x0000000000002a5a       0x12 ./source/IO_LedController_CPP.o
-                0x0000000000002a5a                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_M_get_Tp_allocator() const
+                0x0000000000002a6e       0x12 ./source/IO_LedController_CPP.o
+                0x0000000000002a6e                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_M_get_Tp_allocator() const
  .text._ZN9__gnu_cxx14__alloc_traitsISaImEmE17_S_select_on_copyERKS1_
-                0x0000000000002a6c       0x1e ./source/IO_LedController_CPP.o
-                0x0000000000002a6c                __gnu_cxx::__alloc_traits<std::allocator<unsigned long>, unsigned long>::_S_select_on_copy(std::allocator<unsigned long> const&)
+                0x0000000000002a80       0x1e ./source/IO_LedController_CPP.o
+                0x0000000000002a80                __gnu_cxx::__alloc_traits<std::allocator<unsigned long>, unsigned long>::_S_select_on_copy(std::allocator<unsigned long> const&)
  .text._ZNSt12_Vector_baseImSaImEEC2EjRKS0_
-                0x0000000000002a8a       0x2e ./source/IO_LedController_CPP.o
-                0x0000000000002a8a                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_base(unsigned int, std::allocator<unsigned long> const&)
-                0x0000000000002a8a                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_base(unsigned int, std::allocator<unsigned long> const&)
+                0x0000000000002a9e       0x2e ./source/IO_LedController_CPP.o
+                0x0000000000002a9e                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_base(unsigned int, std::allocator<unsigned long> const&)
+                0x0000000000002a9e                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_base(unsigned int, std::allocator<unsigned long> const&)
  .text._ZNKSt6vectorImSaImEE5beginEv
-                0x0000000000002ab8       0x20 ./source/IO_LedController_CPP.o
-                0x0000000000002ab8                std::vector<unsigned long, std::allocator<unsigned long> >::begin() const
+                0x0000000000002acc       0x20 ./source/IO_LedController_CPP.o
+                0x0000000000002acc                std::vector<unsigned long, std::allocator<unsigned long> >::begin() const
  .text._ZNKSt6vectorImSaImEE3endEv
-                0x0000000000002ad8       0x22 ./source/IO_LedController_CPP.o
-                0x0000000000002ad8                std::vector<unsigned long, std::allocator<unsigned long> >::end() const
+                0x0000000000002aec       0x22 ./source/IO_LedController_CPP.o
+                0x0000000000002aec                std::vector<unsigned long, std::allocator<unsigned long> >::end() const
  .text._ZNSt12_Vector_baseImSaImEE19_M_get_Tp_allocatorEv
-                0x0000000000002afa       0x12 ./source/IO_LedController_CPP.o
-                0x0000000000002afa                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_M_get_Tp_allocator()
+                0x0000000000002b0e       0x12 ./source/IO_LedController_CPP.o
+                0x0000000000002b0e                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_M_get_Tp_allocator()
  .text._ZSt22__uninitialized_copy_aIN9__gnu_cxx17__normal_iteratorIPKmSt6vectorImSaImEEEEPmmET0_T_SA_S9_RSaIT1_E
-                0x0000000000002b0c       0x24 ./source/IO_LedController_CPP.o
-                0x0000000000002b0c                unsigned long* std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long*, unsigned long>(__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long*, std::allocator<unsigned long>&)
+                0x0000000000002b20       0x24 ./source/IO_LedController_CPP.o
+                0x0000000000002b20                unsigned long* std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long*, unsigned long>(__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long*, std::allocator<unsigned long>&)
  .text._ZSt8_DestroyIPmmEvT_S1_RSaIT0_E
-                0x0000000000002b30       0x20 ./source/IO_LedController_CPP.o
-                0x0000000000002b30                void std::_Destroy<unsigned long*, unsigned long>(unsigned long*, unsigned long*, std::allocator<unsigned long>&)
+                0x0000000000002b44       0x20 ./source/IO_LedController_CPP.o
+                0x0000000000002b44                void std::_Destroy<unsigned long*, unsigned long>(unsigned long*, unsigned long*, std::allocator<unsigned long>&)
  .text._ZNSt12_Vector_baseImSaImEE12_Vector_implC2ERKS0_
-                0x0000000000002b50       0x28 ./source/IO_LedController_CPP.o
-                0x0000000000002b50                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_impl::_Vector_impl(std::allocator<unsigned long> const&)
-                0x0000000000002b50                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_impl::_Vector_impl(std::allocator<unsigned long> const&)
+                0x0000000000002b64       0x28 ./source/IO_LedController_CPP.o
+                0x0000000000002b64                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_impl::_Vector_impl(std::allocator<unsigned long> const&)
+                0x0000000000002b64                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_impl::_Vector_impl(std::allocator<unsigned long> const&)
  .text._ZNSt12_Vector_baseImSaImEE13_M_deallocateEPmj
-                0x0000000000002b78       0x26 ./source/IO_LedController_CPP.o
-                0x0000000000002b78                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_M_deallocate(unsigned long*, unsigned int)
+                0x0000000000002b8c       0x26 ./source/IO_LedController_CPP.o
+                0x0000000000002b8c                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_M_deallocate(unsigned long*, unsigned int)
  .text._ZNKSt16initializer_listImE4sizeEv
-                0x0000000000002b9e       0x14 ./source/IO_LedController_CPP.o
-                0x0000000000002b9e                std::initializer_list<unsigned long>::size() const
+                0x0000000000002bb2       0x14 ./source/IO_LedController_CPP.o
+                0x0000000000002bb2                std::initializer_list<unsigned long>::size() const
  .text._ZSt19__iterator_categoryIPKmENSt15iterator_traitsIT_E17iterator_categoryERKS3_
-                0x0000000000002bb2       0x10 ./source/IO_LedController_CPP.o
-                0x0000000000002bb2                std::iterator_traits<unsigned long const*>::iterator_category std::__iterator_category<unsigned long const*>(unsigned long const* const&)
+                0x0000000000002bc6       0x10 ./source/IO_LedController_CPP.o
+                0x0000000000002bc6                std::iterator_traits<unsigned long const*>::iterator_category std::__iterator_category<unsigned long const*>(unsigned long const* const&)
  .text._ZSt10__distanceIPKmENSt15iterator_traitsIT_E15difference_typeES3_S3_St26random_access_iterator_tag
-                0x0000000000002bc2       0x1e ./source/IO_LedController_CPP.o
-                0x0000000000002bc2                std::iterator_traits<unsigned long const*>::difference_type std::__distance<unsigned long const*>(unsigned long const*, unsigned long const*, std::random_access_iterator_tag)
+                0x0000000000002bd6       0x1e ./source/IO_LedController_CPP.o
+                0x0000000000002bd6                std::iterator_traits<unsigned long const*>::difference_type std::__distance<unsigned long const*>(unsigned long const*, unsigned long const*, std::random_access_iterator_tag)
  .text._ZNSt12_Vector_baseImSaImEE11_M_allocateEj
-                0x0000000000002be0       0x2a ./source/IO_LedController_CPP.o
-                0x0000000000002be0                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_M_allocate(unsigned int)
+                0x0000000000002bf4       0x2a ./source/IO_LedController_CPP.o
+                0x0000000000002bf4                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_M_allocate(unsigned int)
  .text._ZSt22__uninitialized_copy_aIPKmPmmET0_T_S4_S3_RSaIT1_E
-                0x0000000000002c0a       0x24 ./source/IO_LedController_CPP.o
-                0x0000000000002c0a                unsigned long* std::__uninitialized_copy_a<unsigned long const*, unsigned long*, unsigned long>(unsigned long const*, unsigned long const*, unsigned long*, std::allocator<unsigned long>&)
+                0x0000000000002c1e       0x24 ./source/IO_LedController_CPP.o
+                0x0000000000002c1e                unsigned long* std::__uninitialized_copy_a<unsigned long const*, unsigned long*, unsigned long>(unsigned long const*, unsigned long const*, unsigned long*, std::allocator<unsigned long>&)
  .text._ZNSt16allocator_traitsISaImEE37select_on_container_copy_constructionERKS0_
-                0x0000000000002c2e       0x1e ./source/IO_LedController_CPP.o
-                0x0000000000002c2e                std::allocator_traits<std::allocator<unsigned long> >::select_on_container_copy_construction(std::allocator<unsigned long> const&)
+                0x0000000000002c42       0x1e ./source/IO_LedController_CPP.o
+                0x0000000000002c42                std::allocator_traits<std::allocator<unsigned long> >::select_on_container_copy_construction(std::allocator<unsigned long> const&)
  .text._ZNSt12_Vector_baseImSaImEE17_M_create_storageEj
-                0x0000000000002c4c       0x3a ./source/IO_LedController_CPP.o
-                0x0000000000002c4c                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_M_create_storage(unsigned int)
+                0x0000000000002c60       0x3a ./source/IO_LedController_CPP.o
+                0x0000000000002c60                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_M_create_storage(unsigned int)
  .text._ZN9__gnu_cxx17__normal_iteratorIPKmSt6vectorImSaImEEEC2ERKS2_
-                0x0000000000002c86       0x1c ./source/IO_LedController_CPP.o
-                0x0000000000002c86                __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >::__normal_iterator(unsigned long const* const&)
-                0x0000000000002c86                __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >::__normal_iterator(unsigned long const* const&)
+                0x0000000000002c9a       0x1c ./source/IO_LedController_CPP.o
+                0x0000000000002c9a                __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >::__normal_iterator(unsigned long const* const&)
+                0x0000000000002c9a                __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >::__normal_iterator(unsigned long const* const&)
  .text._ZSt18uninitialized_copyIN9__gnu_cxx17__normal_iteratorIPKmSt6vectorImSaImEEEEPmET0_T_SA_S9_
-                0x0000000000002ca2       0x32 ./source/IO_LedController_CPP.o
-                0x0000000000002ca2                unsigned long* std::uninitialized_copy<__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long*>(__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long*)
+                0x0000000000002cb6       0x32 ./source/IO_LedController_CPP.o
+                0x0000000000002cb6                unsigned long* std::uninitialized_copy<__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long*>(__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long*)
  .text._ZSt8_DestroyIPmEvT_S1_
-                0x0000000000002cd4       0x1e ./source/IO_LedController_CPP.o
-                0x0000000000002cd4                void std::_Destroy<unsigned long*>(unsigned long*, unsigned long*)
+                0x0000000000002ce8       0x1e ./source/IO_LedController_CPP.o
+                0x0000000000002ce8                void std::_Destroy<unsigned long*>(unsigned long*, unsigned long*)
  .text._ZNSaImEC2ERKS_
-                0x0000000000002cf2       0x20 ./source/IO_LedController_CPP.o
-                0x0000000000002cf2                std::allocator<unsigned long>::allocator(std::allocator<unsigned long> const&)
-                0x0000000000002cf2                std::allocator<unsigned long>::allocator(std::allocator<unsigned long> const&)
+                0x0000000000002d06       0x20 ./source/IO_LedController_CPP.o
+                0x0000000000002d06                std::allocator<unsigned long>::allocator(std::allocator<unsigned long> const&)
+                0x0000000000002d06                std::allocator<unsigned long>::allocator(std::allocator<unsigned long> const&)
  .text._ZNSt12_Vector_baseImSaImEE17_Vector_impl_dataC2Ev
-                0x0000000000002d12       0x24 ./source/IO_LedController_CPP.o
-                0x0000000000002d12                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_impl_data::_Vector_impl_data()
-                0x0000000000002d12                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_impl_data::_Vector_impl_data()
+                0x0000000000002d26       0x24 ./source/IO_LedController_CPP.o
+                0x0000000000002d26                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_impl_data::_Vector_impl_data()
+                0x0000000000002d26                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_impl_data::_Vector_impl_data()
  .text._ZNSt16allocator_traitsISaImEE10deallocateERS0_Pmj
-                0x0000000000002d36       0x20 ./source/IO_LedController_CPP.o
-                0x0000000000002d36                std::allocator_traits<std::allocator<unsigned long> >::deallocate(std::allocator<unsigned long>&, unsigned long*, unsigned int)
+                0x0000000000002d4a       0x20 ./source/IO_LedController_CPP.o
+                0x0000000000002d4a                std::allocator_traits<std::allocator<unsigned long> >::deallocate(std::allocator<unsigned long>&, unsigned long*, unsigned int)
  .text._ZNSt16allocator_traitsISaImEE8allocateERS0_j
-                0x0000000000002d56       0x20 ./source/IO_LedController_CPP.o
-                0x0000000000002d56                std::allocator_traits<std::allocator<unsigned long> >::allocate(std::allocator<unsigned long>&, unsigned int)
+                0x0000000000002d6a       0x20 ./source/IO_LedController_CPP.o
+                0x0000000000002d6a                std::allocator_traits<std::allocator<unsigned long> >::allocate(std::allocator<unsigned long>&, unsigned int)
  .text._ZSt18uninitialized_copyIPKmPmET0_T_S4_S3_
-                0x0000000000002d76       0x32 ./source/IO_LedController_CPP.o
-                0x0000000000002d76                unsigned long* std::uninitialized_copy<unsigned long const*, unsigned long*>(unsigned long const*, unsigned long const*, unsigned long*)
+                0x0000000000002d8a       0x32 ./source/IO_LedController_CPP.o
+                0x0000000000002d8a                unsigned long* std::uninitialized_copy<unsigned long const*, unsigned long*>(unsigned long const*, unsigned long const*, unsigned long*)
  .text._ZNSt20__uninitialized_copyILb1EE13__uninit_copyIN9__gnu_cxx17__normal_iteratorIPKmSt6vectorImSaImEEEEPmEET0_T_SC_SB_
-                0x0000000000002da8       0x22 ./source/IO_LedController_CPP.o
-                0x0000000000002da8                unsigned long* std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long*>(__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long*)
+                0x0000000000002dbc       0x22 ./source/IO_LedController_CPP.o
+                0x0000000000002dbc                unsigned long* std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long*>(__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long*)
  .text._ZNSt12_Destroy_auxILb1EE9__destroyIPmEEvT_S3_
-                0x0000000000002dca       0x12 ./source/IO_LedController_CPP.o
-                0x0000000000002dca                void std::_Destroy_aux<true>::__destroy<unsigned long*>(unsigned long*, unsigned long*)
+                0x0000000000002dde       0x12 ./source/IO_LedController_CPP.o
+                0x0000000000002dde                void std::_Destroy_aux<true>::__destroy<unsigned long*>(unsigned long*, unsigned long*)
  .text._ZNSt15__new_allocatorImEC2ERKS0_
-                0x0000000000002ddc       0x14 ./source/IO_LedController_CPP.o
-                0x0000000000002ddc                std::__new_allocator<unsigned long>::__new_allocator(std::__new_allocator<unsigned long> const&)
-                0x0000000000002ddc                std::__new_allocator<unsigned long>::__new_allocator(std::__new_allocator<unsigned long> const&)
+                0x0000000000002df0       0x14 ./source/IO_LedController_CPP.o
+                0x0000000000002df0                std::__new_allocator<unsigned long>::__new_allocator(std::__new_allocator<unsigned long> const&)
+                0x0000000000002df0                std::__new_allocator<unsigned long>::__new_allocator(std::__new_allocator<unsigned long> const&)
  .text._ZNSt15__new_allocatorImE10deallocateEPmj
-                0x0000000000002df0       0x20 ./source/IO_LedController_CPP.o
-                0x0000000000002df0                std::__new_allocator<unsigned long>::deallocate(unsigned long*, unsigned int)
+                0x0000000000002e04       0x20 ./source/IO_LedController_CPP.o
+                0x0000000000002e04                std::__new_allocator<unsigned long>::deallocate(unsigned long*, unsigned int)
  .text._ZNSt16allocator_traitsISaImEE8max_sizeERKS0_
-                0x0000000000002e10       0x1a ./source/IO_LedController_CPP.o
-                0x0000000000002e10                std::allocator_traits<std::allocator<unsigned long> >::max_size(std::allocator<unsigned long> const&)
+                0x0000000000002e24       0x1a ./source/IO_LedController_CPP.o
+                0x0000000000002e24                std::allocator_traits<std::allocator<unsigned long> >::max_size(std::allocator<unsigned long> const&)
  .text._ZSt3minIjERKT_S2_S2_
-                0x0000000000002e2a       0x24 ./source/IO_LedController_CPP.o
-                0x0000000000002e2a                unsigned int const& std::min<unsigned int>(unsigned int const&, unsigned int const&)
+                0x0000000000002e3e       0x24 ./source/IO_LedController_CPP.o
+                0x0000000000002e3e                unsigned int const& std::min<unsigned int>(unsigned int const&, unsigned int const&)
  .text._ZNSt15__new_allocatorImE8allocateEjPKv
-                0x0000000000002e4e       0x52 ./source/IO_LedController_CPP.o
-                0x0000000000002e4e                std::__new_allocator<unsigned long>::allocate(unsigned int, void const*)
+                0x0000000000002e62       0x52 ./source/IO_LedController_CPP.o
+                0x0000000000002e62                std::__new_allocator<unsigned long>::allocate(unsigned int, void const*)
  .text._ZNSt20__uninitialized_copyILb1EE13__uninit_copyIPKmPmEET0_T_S6_S5_
-                0x0000000000002ea0       0x22 ./source/IO_LedController_CPP.o
-                0x0000000000002ea0                unsigned long* std::__uninitialized_copy<true>::__uninit_copy<unsigned long const*, unsigned long*>(unsigned long const*, unsigned long const*, unsigned long*)
+                0x0000000000002eb4       0x22 ./source/IO_LedController_CPP.o
+                0x0000000000002eb4                unsigned long* std::__uninitialized_copy<true>::__uninit_copy<unsigned long const*, unsigned long*>(unsigned long const*, unsigned long const*, unsigned long*)
  .text._ZSt4copyIN9__gnu_cxx17__normal_iteratorIPKmSt6vectorImSaImEEEEPmET0_T_SA_S9_
-                0x0000000000002ec2       0x34 ./source/IO_LedController_CPP.o
-                0x0000000000002ec2                unsigned long* std::copy<__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long*>(__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long*)
+                0x0000000000002ed6       0x34 ./source/IO_LedController_CPP.o
+                0x0000000000002ed6                unsigned long* std::copy<__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long*>(__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long*)
  .text._ZNKSt15__new_allocatorImE8max_sizeEv
-                0x0000000000002ef6       0x1a ./source/IO_LedController_CPP.o
-                0x0000000000002ef6                std::__new_allocator<unsigned long>::max_size() const
+                0x0000000000002f0a       0x1a ./source/IO_LedController_CPP.o
+                0x0000000000002f0a                std::__new_allocator<unsigned long>::max_size() const
  .text._ZSt4copyIPKmPmET0_T_S4_S3_
-                0x0000000000002f10       0x34 ./source/IO_LedController_CPP.o
-                0x0000000000002f10                unsigned long* std::copy<unsigned long const*, unsigned long*>(unsigned long const*, unsigned long const*, unsigned long*)
+                0x0000000000002f24       0x34 ./source/IO_LedController_CPP.o
+                0x0000000000002f24                unsigned long* std::copy<unsigned long const*, unsigned long*>(unsigned long const*, unsigned long const*, unsigned long*)
  .text._ZSt12__miter_baseIN9__gnu_cxx17__normal_iteratorIPKmSt6vectorImSaImEEEEET_S8_
-                0x0000000000002f44       0x12 ./source/IO_LedController_CPP.o
-                0x0000000000002f44                __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > > std::__miter_base<__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > > >(__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >)
+                0x0000000000002f58       0x12 ./source/IO_LedController_CPP.o
+                0x0000000000002f58                __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > > std::__miter_base<__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > > >(__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >)
  .text._ZSt13__copy_move_aILb0EN9__gnu_cxx17__normal_iteratorIPKmSt6vectorImSaImEEEEPmET1_T0_SA_S9_
-                0x0000000000002f56       0x4a ./source/IO_LedController_CPP.o
-                0x0000000000002f56                unsigned long* std::__copy_move_a<false, __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long*>(__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long*)
+                0x0000000000002f6a       0x4a ./source/IO_LedController_CPP.o
+                0x0000000000002f6a                unsigned long* std::__copy_move_a<false, __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long*>(__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long*)
  .text._ZSt12__miter_baseIPKmET_S2_
-                0x0000000000002fa0       0x12 ./source/IO_LedController_CPP.o
-                0x0000000000002fa0                unsigned long const* std::__miter_base<unsigned long const*>(unsigned long const*)
+                0x0000000000002fb4       0x12 ./source/IO_LedController_CPP.o
+                0x0000000000002fb4                unsigned long const* std::__miter_base<unsigned long const*>(unsigned long const*)
  .text._ZSt13__copy_move_aILb0EPKmPmET1_T0_S4_S3_
-                0x0000000000002fb2       0x4a ./source/IO_LedController_CPP.o
-                0x0000000000002fb2                unsigned long* std::__copy_move_a<false, unsigned long const*, unsigned long*>(unsigned long const*, unsigned long const*, unsigned long*)
+                0x0000000000002fc6       0x4a ./source/IO_LedController_CPP.o
+                0x0000000000002fc6                unsigned long* std::__copy_move_a<false, unsigned long const*, unsigned long*>(unsigned long const*, unsigned long const*, unsigned long*)
  .text._ZSt12__niter_baseIPKmSt6vectorImSaImEEET_N9__gnu_cxx17__normal_iteratorIS5_T0_EE
-                0x0000000000002ffc       0x1c ./source/IO_LedController_CPP.o
-                0x0000000000002ffc                unsigned long const* std::__niter_base<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >(__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >)
+                0x0000000000003010       0x1c ./source/IO_LedController_CPP.o
+                0x0000000000003010                unsigned long const* std::__niter_base<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >(__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >)
  .text._ZSt12__niter_baseIPmET_S1_
-                0x0000000000003018       0x12 ./source/IO_LedController_CPP.o
-                0x0000000000003018                unsigned long* std::__niter_base<unsigned long*>(unsigned long*)
+                0x000000000000302c       0x12 ./source/IO_LedController_CPP.o
+                0x000000000000302c                unsigned long* std::__niter_base<unsigned long*>(unsigned long*)
  .text._ZSt14__copy_move_a1ILb0EPKmPmET1_T0_S4_S3_
-                0x000000000000302a       0x22 ./source/IO_LedController_CPP.o
-                0x000000000000302a                unsigned long* std::__copy_move_a1<false, unsigned long const*, unsigned long*>(unsigned long const*, unsigned long const*, unsigned long*)
+                0x000000000000303e       0x22 ./source/IO_LedController_CPP.o
+                0x000000000000303e                unsigned long* std::__copy_move_a1<false, unsigned long const*, unsigned long*>(unsigned long const*, unsigned long const*, unsigned long*)
  .text._ZSt12__niter_wrapIPmET_RKS1_S1_
-                0x000000000000304c       0x14 ./source/IO_LedController_CPP.o
-                0x000000000000304c                unsigned long* std::__niter_wrap<unsigned long*>(unsigned long* const&, unsigned long*)
+                0x0000000000003060       0x14 ./source/IO_LedController_CPP.o
+                0x0000000000003060                unsigned long* std::__niter_wrap<unsigned long*>(unsigned long* const&, unsigned long*)
  .text._ZSt12__niter_baseIPKmET_S2_
-                0x0000000000003060       0x12 ./source/IO_LedController_CPP.o
-                0x0000000000003060                unsigned long const* std::__niter_base<unsigned long const*>(unsigned long const*)
+                0x0000000000003074       0x12 ./source/IO_LedController_CPP.o
+                0x0000000000003074                unsigned long const* std::__niter_base<unsigned long const*>(unsigned long const*)
  .text._ZNK9__gnu_cxx17__normal_iteratorIPKmSt6vectorImSaImEEE4baseEv
-                0x0000000000003072       0x12 ./source/IO_LedController_CPP.o
-                0x0000000000003072                __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >::base() const
+                0x0000000000003086       0x12 ./source/IO_LedController_CPP.o
+                0x0000000000003086                __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >::base() const
  .text._ZSt14__copy_move_a2ILb0EPKmPmET1_T0_S4_S3_
-                0x0000000000003084       0x22 ./source/IO_LedController_CPP.o
-                0x0000000000003084                unsigned long* std::__copy_move_a2<false, unsigned long const*, unsigned long*>(unsigned long const*, unsigned long const*, unsigned long*)
+                0x0000000000003098       0x22 ./source/IO_LedController_CPP.o
+                0x0000000000003098                unsigned long* std::__copy_move_a2<false, unsigned long const*, unsigned long*>(unsigned long const*, unsigned long const*, unsigned long*)
  .text._ZNSt11__copy_moveILb0ELb1ESt26random_access_iterator_tagE8__copy_mImEEPT_PKS3_S6_S4_
-                0x00000000000030a6       0x3a ./source/IO_LedController_CPP.o
-                0x00000000000030a6                unsigned long* std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<unsigned long>(unsigned long const*, unsigned long const*, unsigned long*)
+                0x00000000000030ba       0x3a ./source/IO_LedController_CPP.o
+                0x00000000000030ba                unsigned long* std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<unsigned long>(unsigned long const*, unsigned long const*, unsigned long*)
  .text._ZNSt12_Vector_baseImSaImEEC2Ev
-                0x00000000000030e0       0x1a ./source/Neopixels.o
-                0x00000000000030e0                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_base()
-                0x00000000000030e0                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_base()
+                0x00000000000030f4       0x1a ./source/Neopixels.o
+                0x00000000000030f4                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_base()
+                0x00000000000030f4                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_base()
  .text._ZNSt6vectorImSaImEEC2Ev
-                0x00000000000030fa       0x1a ./source/Neopixels.o
-                0x00000000000030fa                std::vector<unsigned long, std::allocator<unsigned long> >::vector()
-                0x00000000000030fa                std::vector<unsigned long, std::allocator<unsigned long> >::vector()
+                0x000000000000310e       0x1a ./source/Neopixels.o
+                0x000000000000310e                std::vector<unsigned long, std::allocator<unsigned long> >::vector()
+                0x000000000000310e                std::vector<unsigned long, std::allocator<unsigned long> >::vector()
  .text._ZN9NeopixelsD0Ev
-                0x0000000000003114       0x24 ./source/Neopixels.o
-                0x0000000000003114                Neopixels::~Neopixels()
+                0x0000000000003128       0x24 ./source/Neopixels.o
+                0x0000000000003128                Neopixels::~Neopixels()
  .text._ZN9Neopixels13getLedsNumberEv
-                0x0000000000003138       0x1c ./source/Neopixels.o
-                0x0000000000003138                Neopixels::getLedsNumber()
+                0x000000000000314c       0x1c ./source/Neopixels.o
+                0x000000000000314c                Neopixels::getLedsNumber()
  .text._ZN9Neopixels11writeColorsESt6vectorImSaImEE
-                0x0000000000003154       0x2a ./source/Neopixels.o
-                0x0000000000003154                Neopixels::writeColors(std::vector<unsigned long, std::allocator<unsigned long> >)
+                0x0000000000003168       0x2a ./source/Neopixels.o
+                0x0000000000003168                Neopixels::writeColors(std::vector<unsigned long, std::allocator<unsigned long> >)
  .text._ZN9Neopixels8sendDataEv
-                0x000000000000317e       0xd8 ./source/Neopixels.o
-                0x000000000000317e                Neopixels::sendData()
+                0x0000000000003192       0xd8 ./source/Neopixels.o
+                0x0000000000003192                Neopixels::sendData()
  .text._ZN9Neopixels12setAnimColorEm
-                0x0000000000003256       0x18 ./source/Neopixels.o
-                0x0000000000003256                Neopixels::setAnimColor(unsigned long)
+                0x000000000000326a       0x18 ./source/Neopixels.o
+                0x000000000000326a                Neopixels::setAnimColor(unsigned long)
  .text._ZNSt12_Vector_baseImSaImEE12_Vector_implC2Ev
-                0x000000000000326e       0x22 ./source/Neopixels.o
-                0x000000000000326e                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_impl::_Vector_impl()
-                0x000000000000326e                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_impl::_Vector_impl()
+                0x0000000000003282       0x22 ./source/Neopixels.o
+                0x0000000000003282                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_impl::_Vector_impl()
+                0x0000000000003282                std::_Vector_base<unsigned long, std::allocator<unsigned long> >::_Vector_impl::_Vector_impl()
  .text._ZNSt6vectorImSaImEE5clearEv
-                0x0000000000003290       0x1e ./source/Neopixels.o
-                0x0000000000003290                std::vector<unsigned long, std::allocator<unsigned long> >::clear()
+                0x00000000000032a4       0x1e ./source/Neopixels.o
+                0x00000000000032a4                std::vector<unsigned long, std::allocator<unsigned long> >::clear()
  .text._ZN9__gnu_cxx14__alloc_traitsISaImEmE27_S_propagate_on_copy_assignEv
-                0x00000000000032ae        0xc ./source/Neopixels.o
-                0x00000000000032ae                __gnu_cxx::__alloc_traits<std::allocator<unsigned long>, unsigned long>::_S_propagate_on_copy_assign()
+                0x00000000000032c2        0xc ./source/Neopixels.o
+                0x00000000000032c2                __gnu_cxx::__alloc_traits<std::allocator<unsigned long>, unsigned long>::_S_propagate_on_copy_assign()
  .text._ZN9__gnu_cxx14__alloc_traitsISaImEmE15_S_always_equalEv
-                0x00000000000032ba        0xc ./source/Neopixels.o
-                0x00000000000032ba                __gnu_cxx::__alloc_traits<std::allocator<unsigned long>, unsigned long>::_S_always_equal()
+                0x00000000000032ce        0xc ./source/Neopixels.o
+                0x00000000000032ce                __gnu_cxx::__alloc_traits<std::allocator<unsigned long>, unsigned long>::_S_always_equal()
  .text._ZNSt6vectorImSaImEEaSERKS1_
-                0x00000000000032c6      0x210 ./source/Neopixels.o
-                0x00000000000032c6                std::vector<unsigned long, std::allocator<unsigned long> >::operator=(std::vector<unsigned long, std::allocator<unsigned long> > const&)
+                0x00000000000032da      0x210 ./source/Neopixels.o
+                0x00000000000032da                std::vector<unsigned long, std::allocator<unsigned long> >::operator=(std::vector<unsigned long, std::allocator<unsigned long> > const&)
  .text._ZNSt6vectorImSaImEEixEj
-                0x00000000000034d6       0x1c ./source/Neopixels.o
-                0x00000000000034d6                std::vector<unsigned long, std::allocator<unsigned long> >::operator[](unsigned int)
+                0x00000000000034ea       0x1c ./source/Neopixels.o
+                0x00000000000034ea                std::vector<unsigned long, std::allocator<unsigned long> >::operator[](unsigned int)
  .text._ZNSt6vectorImSaImEE5beginEv
-                0x00000000000034f2       0x20 ./source/Neopixels.o
-                0x00000000000034f2                std::vector<unsigned long, std::allocator<unsigned long> >::begin()
+                0x0000000000003506       0x20 ./source/Neopixels.o
+                0x0000000000003506                std::vector<unsigned long, std::allocator<unsigned long> >::begin()
  .text._ZNK9__gnu_cxx17__normal_iteratorIPmSt6vectorImSaImEEEplEi
-                0x0000000000003512       0x30 ./source/Neopixels.o
-                0x0000000000003512                __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >::operator+(int) const
+                0x0000000000003526       0x30 ./source/Neopixels.o
+                0x0000000000003526                __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >::operator+(int) const
  .text._ZNSt6vectorImSaImEE3endEv
-                0x0000000000003542       0x22 ./source/Neopixels.o
-                0x0000000000003542                std::vector<unsigned long, std::allocator<unsigned long> >::end()
+                0x0000000000003556       0x22 ./source/Neopixels.o
+                0x0000000000003556                std::vector<unsigned long, std::allocator<unsigned long> >::end()
  .text._ZNSt6vectorImSaImEE15_M_erase_at_endEPm
-                0x0000000000003564       0x42 ./source/Neopixels.o
-                0x0000000000003564                std::vector<unsigned long, std::allocator<unsigned long> >::_M_erase_at_end(unsigned long*)
+                0x0000000000003578       0x42 ./source/Neopixels.o
+                0x0000000000003578                std::vector<unsigned long, std::allocator<unsigned long> >::_M_erase_at_end(unsigned long*)
  .text._ZSt11__addressofIKSt6vectorImSaImEEEPT_RS4_
-                0x00000000000035a6       0x12 ./source/Neopixels.o
-                0x00000000000035a6                std::vector<unsigned long, std::allocator<unsigned long> > const* std::__addressof<std::vector<unsigned long, std::allocator<unsigned long> > const>(std::vector<unsigned long, std::allocator<unsigned long> > const&)
+                0x00000000000035ba       0x12 ./source/Neopixels.o
+                0x00000000000035ba                std::vector<unsigned long, std::allocator<unsigned long> > const* std::__addressof<std::vector<unsigned long, std::allocator<unsigned long> > const>(std::vector<unsigned long, std::allocator<unsigned long> > const&)
  .text._ZStneRKSaImES1_
-                0x00000000000035b8       0x14 ./source/Neopixels.o
-                0x00000000000035b8                std::operator!=(std::allocator<unsigned long> const&, std::allocator<unsigned long> const&)
+                0x00000000000035cc       0x14 ./source/Neopixels.o
+                0x00000000000035cc                std::operator!=(std::allocator<unsigned long> const&, std::allocator<unsigned long> const&)
  .text._ZSt15__alloc_on_copyISaImEEvRT_RKS1_
-                0x00000000000035cc       0x12 ./source/Neopixels.o
-                0x00000000000035cc                void std::__alloc_on_copy<std::allocator<unsigned long> >(std::allocator<unsigned long>&, std::allocator<unsigned long> const&)
+                0x00000000000035e0       0x12 ./source/Neopixels.o
+                0x00000000000035e0                void std::__alloc_on_copy<std::allocator<unsigned long> >(std::allocator<unsigned long>&, std::allocator<unsigned long> const&)
  .text._ZNKSt6vectorImSaImEE8capacityEv
-                0x00000000000035de       0x1c ./source/Neopixels.o
-                0x00000000000035de                std::vector<unsigned long, std::allocator<unsigned long> >::capacity() const
+                0x00000000000035f2       0x1c ./source/Neopixels.o
+                0x00000000000035f2                std::vector<unsigned long, std::allocator<unsigned long> >::capacity() const
  .text._ZNSt6vectorImSaImEE20_M_allocate_and_copyIN9__gnu_cxx17__normal_iteratorIPKmS1_EEEEPmjT_S9_
-                0x00000000000035fa       0x3c ./source/Neopixels.o
-                0x00000000000035fa                unsigned long* std::vector<unsigned long, std::allocator<unsigned long> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > > >(unsigned int, __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >)
+                0x000000000000360e       0x3c ./source/Neopixels.o
+                0x000000000000360e                unsigned long* std::vector<unsigned long, std::allocator<unsigned long> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > > >(unsigned int, __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >)
  .text._ZSt4copyIN9__gnu_cxx17__normal_iteratorIPKmSt6vectorImSaImEEEENS1_IPmS6_EEET0_T_SB_SA_
-                0x0000000000003636       0x34 ./source/Neopixels.o
-                0x0000000000003636                __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > > std::copy<__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > > >(__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >)
+                0x000000000000364a       0x34 ./source/Neopixels.o
+                0x000000000000364a                __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > > std::copy<__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > > >(__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >)
  .text._ZSt8_DestroyIN9__gnu_cxx17__normal_iteratorIPmSt6vectorImSaImEEEEmEvT_S7_RSaIT0_E
-                0x000000000000366a       0x20 ./source/Neopixels.o
-                0x000000000000366a                void std::_Destroy<__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long>(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, std::allocator<unsigned long>&)
+                0x000000000000367e       0x20 ./source/Neopixels.o
+                0x000000000000367e                void std::_Destroy<__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long>(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, std::allocator<unsigned long>&)
  .text._ZSt4copyIPmS0_ET0_T_S2_S1_
-                0x000000000000368a       0x34 ./source/Neopixels.o
-                0x000000000000368a                unsigned long* std::copy<unsigned long*, unsigned long*>(unsigned long*, unsigned long*, unsigned long*)
+                0x000000000000369e       0x34 ./source/Neopixels.o
+                0x000000000000369e                unsigned long* std::copy<unsigned long*, unsigned long*>(unsigned long*, unsigned long*, unsigned long*)
  .text._ZSt22__uninitialized_copy_aIPmS0_mET0_T_S2_S1_RSaIT1_E
-                0x00000000000036be       0x24 ./source/Neopixels.o
-                0x00000000000036be                unsigned long* std::__uninitialized_copy_a<unsigned long*, unsigned long*, unsigned long>(unsigned long*, unsigned long*, unsigned long*, std::allocator<unsigned long>&)
+                0x00000000000036d2       0x24 ./source/Neopixels.o
+                0x00000000000036d2                unsigned long* std::__uninitialized_copy_a<unsigned long*, unsigned long*, unsigned long>(unsigned long*, unsigned long*, unsigned long*, std::allocator<unsigned long>&)
  .text._ZN9__gnu_cxx17__normal_iteratorIPmSt6vectorImSaImEEEC2ERKS1_
-                0x00000000000036e2       0x1c ./source/Neopixels.o
-                0x00000000000036e2                __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >::__normal_iterator(unsigned long* const&)
-                0x00000000000036e2                __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >::__normal_iterator(unsigned long* const&)
+                0x00000000000036f6       0x1c ./source/Neopixels.o
+                0x00000000000036f6                __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >::__normal_iterator(unsigned long* const&)
+                0x00000000000036f6                __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >::__normal_iterator(unsigned long* const&)
  .text._ZNK9__gnu_cxx17__normal_iteratorIPmSt6vectorImSaImEEE4baseEv
-                0x00000000000036fe       0x12 ./source/Neopixels.o
-                0x00000000000036fe                __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >::base() const
+                0x0000000000003712       0x12 ./source/Neopixels.o
+                0x0000000000003712                __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >::base() const
  .text._ZSt13__copy_move_aILb0EN9__gnu_cxx17__normal_iteratorIPKmSt6vectorImSaImEEEENS1_IPmS6_EEET1_T0_SB_SA_
-                0x0000000000003710       0x4a ./source/Neopixels.o
-                0x0000000000003710                __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > > std::__copy_move_a<false, __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > > >(__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >)
+                0x0000000000003724       0x4a ./source/Neopixels.o
+                0x0000000000003724                __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > > std::__copy_move_a<false, __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > > >(__gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long const*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >)
  .text._ZSt8_DestroyIN9__gnu_cxx17__normal_iteratorIPmSt6vectorImSaImEEEEEvT_S7_
-                0x000000000000375a       0x1e ./source/Neopixels.o
-                0x000000000000375a                void std::_Destroy<__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > > >(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >)
+                0x000000000000376e       0x1e ./source/Neopixels.o
+                0x000000000000376e                void std::_Destroy<__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > > >(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >)
  .text._ZSt12__miter_baseIPmET_S1_
-                0x0000000000003778       0x12 ./source/Neopixels.o
-                0x0000000000003778                unsigned long* std::__miter_base<unsigned long*>(unsigned long*)
+                0x000000000000378c       0x12 ./source/Neopixels.o
+                0x000000000000378c                unsigned long* std::__miter_base<unsigned long*>(unsigned long*)
  .text._ZSt13__copy_move_aILb0EPmS0_ET1_T0_S2_S1_
-                0x000000000000378a       0x4a ./source/Neopixels.o
-                0x000000000000378a                unsigned long* std::__copy_move_a<false, unsigned long*, unsigned long*>(unsigned long*, unsigned long*, unsigned long*)
+                0x000000000000379e       0x4a ./source/Neopixels.o
+                0x000000000000379e                unsigned long* std::__copy_move_a<false, unsigned long*, unsigned long*>(unsigned long*, unsigned long*, unsigned long*)
  .text._ZSt18uninitialized_copyIPmS0_ET0_T_S2_S1_
-                0x00000000000037d4       0x32 ./source/Neopixels.o
-                0x00000000000037d4                unsigned long* std::uninitialized_copy<unsigned long*, unsigned long*>(unsigned long*, unsigned long*, unsigned long*)
+                0x00000000000037e8       0x32 ./source/Neopixels.o
+                0x00000000000037e8                unsigned long* std::uninitialized_copy<unsigned long*, unsigned long*>(unsigned long*, unsigned long*, unsigned long*)
  .text._ZSt12__niter_baseIPmSt6vectorImSaImEEET_N9__gnu_cxx17__normal_iteratorIS4_T0_EE
-                0x0000000000003806       0x1c ./source/Neopixels.o
-                0x0000000000003806                unsigned long* std::__niter_base<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >)
+                0x000000000000381a       0x1c ./source/Neopixels.o
+                0x000000000000381a                unsigned long* std::__niter_base<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >)
  .text._ZSt12__niter_wrapIN9__gnu_cxx17__normal_iteratorIPmSt6vectorImSaImEEEES2_ET_S7_T0_
-                0x0000000000003822       0x30 ./source/Neopixels.o
-                0x0000000000003822                __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > > std::__niter_wrap<__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long*>(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long*)
+                0x0000000000003836       0x30 ./source/Neopixels.o
+                0x0000000000003836                __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > > std::__niter_wrap<__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long*>(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long*)
  .text._ZNSt12_Destroy_auxILb1EE9__destroyIN9__gnu_cxx17__normal_iteratorIPmSt6vectorImSaImEEEEEEvT_S9_
-                0x0000000000003852       0x12 ./source/Neopixels.o
-                0x0000000000003852                void std::_Destroy_aux<true>::__destroy<__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > > >(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >)
+                0x0000000000003866       0x12 ./source/Neopixels.o
+                0x0000000000003866                void std::_Destroy_aux<true>::__destroy<__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > > >(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, __gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >)
  .text._ZSt14__copy_move_a1ILb0EPmS0_ET1_T0_S2_S1_
-                0x0000000000003864       0x22 ./source/Neopixels.o
-                0x0000000000003864                unsigned long* std::__copy_move_a1<false, unsigned long*, unsigned long*>(unsigned long*, unsigned long*, unsigned long*)
+                0x0000000000003878       0x22 ./source/Neopixels.o
+                0x0000000000003878                unsigned long* std::__copy_move_a1<false, unsigned long*, unsigned long*>(unsigned long*, unsigned long*, unsigned long*)
  .text._ZNSt20__uninitialized_copyILb1EE13__uninit_copyIPmS2_EET0_T_S4_S3_
-                0x0000000000003886       0x22 ./source/Neopixels.o
-                0x0000000000003886                unsigned long* std::__uninitialized_copy<true>::__uninit_copy<unsigned long*, unsigned long*>(unsigned long*, unsigned long*, unsigned long*)
+                0x000000000000389a       0x22 ./source/Neopixels.o
+                0x000000000000389a                unsigned long* std::__uninitialized_copy<true>::__uninit_copy<unsigned long*, unsigned long*>(unsigned long*, unsigned long*, unsigned long*)
  .text._ZSt14__copy_move_a2ILb0EPmS0_ET1_T0_S2_S1_
-                0x00000000000038a8       0x22 ./source/Neopixels.o
-                0x00000000000038a8                unsigned long* std::__copy_move_a2<false, unsigned long*, unsigned long*>(unsigned long*, unsigned long*, unsigned long*)
- .text._Znwj    0x00000000000038ca       0x1a ./source/cpp_config.o
-                0x00000000000038ca                operator new(unsigned int)
- .text._ZdlPv   0x00000000000038e4       0x18 ./source/cpp_config.o
-                0x00000000000038e4                operator delete(void*)
+                0x00000000000038bc       0x22 ./source/Neopixels.o
+                0x00000000000038bc                unsigned long* std::__copy_move_a2<false, unsigned long*, unsigned long*>(unsigned long*, unsigned long*, unsigned long*)
+ .text._Znwj    0x00000000000038de       0x1a ./source/cpp_config.o
+                0x00000000000038de                operator new(unsigned int)
+ .text._ZdlPv   0x00000000000038f8       0x18 ./source/cpp_config.o
+                0x00000000000038f8                operator delete(void*)
  .text.__aeabi_atexit
-                0x00000000000038fc       0x16 ./source/cpp_config.o
-                0x00000000000038fc                __aeabi_atexit
+                0x0000000000003910       0x16 ./source/cpp_config.o
+                0x0000000000003910                __aeabi_atexit
  .text.CLOCK_GetFRGInputClkFreq
-                0x0000000000003912       0x42 ./drivers/fsl_clock.o
+                0x0000000000003926       0x42 ./drivers/fsl_clock.o
  .text.RESET_PeripheralReset
-                0x0000000000003954       0x20 ./drivers/fsl_reset.o
-                0x0000000000003954                RESET_PeripheralReset
+                0x0000000000003968       0x20 ./drivers/fsl_reset.o
+                0x0000000000003968                RESET_PeripheralReset
  .text.SPI_Enable
-                0x0000000000003974       0x3a ./drivers/fsl_spi.o
+                0x0000000000003988       0x3a ./drivers/fsl_spi.o
  .text.SPI_IsMaster
-                0x00000000000039ae       0x1e ./drivers/fsl_spi.o
+                0x00000000000039c2       0x1e ./drivers/fsl_spi.o
  .text.USART_EnableTx
-                0x00000000000039cc       0x46 ./drivers/fsl_usart.o
+                0x00000000000039e0       0x46 ./drivers/fsl_usart.o
  .text.USART_EnableRx
-                0x0000000000003a12       0x44 ./drivers/fsl_usart.o
+                0x0000000000003a26       0x44 ./drivers/fsl_usart.o
  .text.SystemInitHook
-                0x0000000000003a56        0xa ./device/system_LPC804.o
-                0x0000000000003a56                SystemInitHook
+                0x0000000000003a6a        0xa ./device/system_LPC804.o
+                0x0000000000003a6a                SystemInitHook
  .text.BOARD_InitBootClocks
-                0x0000000000003a60        0xe ./board/clock_config.o
-                0x0000000000003a60                BOARD_InitBootClocks
+                0x0000000000003a74        0xe ./board/clock_config.o
+                0x0000000000003a74                BOARD_InitBootClocks
  .text.BOARD_InitPeripherals
-                0x0000000000003a6e        0xe ./board/peripherals.o
-                0x0000000000003a6e                BOARD_InitPeripherals
+                0x0000000000003a82        0xe ./board/peripherals.o
+                0x0000000000003a82                BOARD_InitPeripherals
  .text.BOARD_InitBootPeripherals
-                0x0000000000003a7c        0xe ./board/peripherals.o
-                0x0000000000003a7c                BOARD_InitBootPeripherals
+                0x0000000000003a90        0xe ./board/peripherals.o
+                0x0000000000003a90                BOARD_InitBootPeripherals
  .text.IOCON_PinMuxSet
-                0x0000000000003a8a       0x26 ./board/pin_mux.o
+                0x0000000000003a9e       0x26 ./board/pin_mux.o
  .text.BOARD_InitBootPins
-                0x0000000000003ab0       0x16 ./board/pin_mux.o
-                0x0000000000003ab0                BOARD_InitBootPins
+                0x0000000000003ac4       0x16 ./board/pin_mux.o
+                0x0000000000003ac4                BOARD_InitBootPins
  .text.BOARD_InitPins
-                0x0000000000003ac6        0xa ./board/pin_mux.o
-                0x0000000000003ac6                BOARD_InitPins
- .text.memcpy   0x0000000000003ad0       0x12 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-memcpy-stub.o)
-                0x0000000000003ad0                memcpy
- .text          0x0000000000003ae2        0xe /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-strlen.o)
-                0x0000000000003ae2                strlen
- .text.memmove  0x0000000000003af0       0x26 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-memmove.o)
-                0x0000000000003af0                memmove
- .text.memset   0x0000000000003b16       0x10 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-memset.o)
-                0x0000000000003b16                memset
+                0x0000000000003ada        0xa ./board/pin_mux.o
+                0x0000000000003ada                BOARD_InitPins
+ .text.memcpy   0x0000000000003ae4       0x12 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-memcpy-stub.o)
+                0x0000000000003ae4                memcpy
+ .text          0x0000000000003af6        0xe /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-strlen.o)
+                0x0000000000003af6                strlen
+ .text.memmove  0x0000000000003b04       0x26 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-memmove.o)
+                0x0000000000003b04                memmove
+ .text.memset   0x0000000000003b2a       0x10 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-memset.o)
+                0x0000000000003b2a                memset
  .text.__retarget_lock_acquire_recursive
-                0x0000000000003b26        0x2 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-lock.o)
-                0x0000000000003b26                __retarget_lock_acquire_recursive
+                0x0000000000003b3a        0x2 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-lock.o)
+                0x0000000000003b3a                __retarget_lock_acquire_recursive
  .text.__retarget_lock_release_recursive
-                0x0000000000003b28        0x2 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-lock.o)
-                0x0000000000003b28                __retarget_lock_release_recursive
- .text._ZdlPvj  0x0000000000003b2a        0x8 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++_nano.a(del_ops.o)
-                0x0000000000003b2a                operator delete(void*, unsigned int)
+                0x0000000000003b3c        0x2 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(libc_a-lock.o)
+                0x0000000000003b3c                __retarget_lock_release_recursive
+ .text._ZdlPvj  0x0000000000003b3e        0x8 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++_nano.a(del_ops.o)
+                0x0000000000003b3e                operator delete(void*, unsigned int)
  .text.unlikely._ZSt17__throw_bad_allocv
-                0x0000000000003b32        0x6 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++_nano.a(functexcept.o)
-                0x0000000000003b32                std::__throw_bad_alloc()
+                0x0000000000003b46        0x6 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++_nano.a(functexcept.o)
+                0x0000000000003b46                std::__throw_bad_alloc()
  .text.unlikely._ZSt28__throw_bad_array_new_lengthv
-                0x0000000000003b38        0x6 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++_nano.a(functexcept.o)
-                0x0000000000003b38                std::__throw_bad_array_new_length()
+                0x0000000000003b4c        0x6 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++_nano.a(functexcept.o)
+                0x0000000000003b4c                std::__throw_bad_array_new_length()
  .text.unlikely._ZSt20__throw_length_errorPKc
-                0x0000000000003b3e        0x6 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++_nano.a(functexcept.o)
-                0x0000000000003b3e                std::__throw_length_error(char const*)
- .text.abort    0x0000000000003b44        0x2 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_nohost.a(cr_abort.o)
-                0x0000000000003b44                abort
+                0x0000000000003b52        0x6 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++_nano.a(functexcept.o)
+                0x0000000000003b52                std::__throw_length_error(char const*)
+ .text.abort    0x0000000000003b58        0x2 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_nohost.a(cr_abort.o)
+                0x0000000000003b58                abort
  *(SORT_BY_ALIGNMENT(.rodata) SORT_BY_ALIGNMENT(.rodata.*) SORT_BY_ALIGNMENT(.constdata) SORT_BY_ALIGNMENT(.constdata.*))
- *fill*         0x0000000000003b46        0x2 ff
+ *fill*         0x0000000000003b5a        0x2 ff
  .rodata.__assert_func.str1.4
-                0x0000000000003b48       0x3e ./utilities/fsl_assert.o
- *fill*         0x0000000000003b86        0x2 ff
+                0x0000000000003b5c       0x3e ./utilities/fsl_assert.o
+ *fill*         0x0000000000003b9a        0x2 ff
  .rodata.main.str1.4
-                0x0000000000003b88       0x28 ./source/IO_LedController_CPP.o
- .rodata.main   0x0000000000003bb0       0x1c ./source/IO_LedController_CPP.o
+                0x0000000000003b9c       0x28 ./source/IO_LedController_CPP.o
+ .rodata.main   0x0000000000003bc4       0x1c ./source/IO_LedController_CPP.o
  .rodata._ZNSt6vectorImSaImEE17_S_check_init_lenEjRKS0_.str1.4
-                0x0000000000003bcc       0x31 ./source/IO_LedController_CPP.o
- *fill*         0x0000000000003bfd        0x3 ff
- .rodata        0x0000000000003c00       0x2c ./source/IO_LedController_CPP.o
+                0x0000000000003be0       0x31 ./source/IO_LedController_CPP.o
+ *fill*         0x0000000000003c11        0x3 ff
+ .rodata        0x0000000000003c14       0x2c ./source/IO_LedController_CPP.o
  .rodata._ZTV9Neopixels
-                0x0000000000003c2c       0x10 ./source/Neopixels.o
-                0x0000000000003c2c                vtable for Neopixels
+                0x0000000000003c40       0x10 ./source/Neopixels.o
+                0x0000000000003c40                vtable for Neopixels
  .rodata.CLOCK_SetFRGClkFreq.str1.4
-                0x0000000000003c3c       0x14 ./drivers/fsl_clock.o
- .rodata.CLOCK_UpdateClkSrc.str1.4
                 0x0000000000003c50       0x14 ./drivers/fsl_clock.o
+ .rodata.CLOCK_UpdateClkSrc.str1.4
+                0x0000000000003c64       0x14 ./drivers/fsl_clock.o
                                           0x5 (size before relaxing)
  .rodata.CLOCK_GetMainClkFreq.str1.4
-                0x0000000000003c50        0x6 ./drivers/fsl_clock.o
- *fill*         0x0000000000003c56        0x2 ff
+                0x0000000000003c64        0x6 ./drivers/fsl_clock.o
+ *fill*         0x0000000000003c6a        0x2 ff
  .rodata.__func__.5
-                0x0000000000003c58       0x14 ./drivers/fsl_clock.o
+                0x0000000000003c6c       0x14 ./drivers/fsl_clock.o
  .rodata.__func__.4
-                0x0000000000003c6c       0x13 ./drivers/fsl_clock.o
- *fill*         0x0000000000003c7f        0x1 ff
+                0x0000000000003c80       0x13 ./drivers/fsl_clock.o
+ *fill*         0x0000000000003c93        0x1 ff
  .rodata.__func__.3
-                0x0000000000003c80       0x15 ./drivers/fsl_clock.o
- *fill*         0x0000000000003c95        0x3 ff
+                0x0000000000003c94       0x15 ./drivers/fsl_clock.o
+ *fill*         0x0000000000003ca9        0x3 ff
  .rodata.RESET_SetPeripheralReset.str1.4
-                0x0000000000003c98       0x1c ./drivers/fsl_reset.o
+                0x0000000000003cac       0x1c ./drivers/fsl_reset.o
  .rodata.__func__.1
-                0x0000000000003cb4       0x19 ./drivers/fsl_reset.o
- *fill*         0x0000000000003ccd        0x3 ff
+                0x0000000000003cc8       0x19 ./drivers/fsl_reset.o
+ *fill*         0x0000000000003ce1        0x3 ff
  .rodata.__func__.0
-                0x0000000000003cd0       0x1b ./drivers/fsl_reset.o
- *fill*         0x0000000000003ceb        0x1 ff
+                0x0000000000003ce4       0x1b ./drivers/fsl_reset.o
+ *fill*         0x0000000000003cff        0x1 ff
  .rodata.SPI_GetStatusFlags.str1.4
-                0x0000000000003cec       0x1a ./drivers/fsl_spi.o
- *fill*         0x0000000000003d06        0x2 ff
+                0x0000000000003d00       0x1a ./drivers/fsl_spi.o
+ *fill*         0x0000000000003d1a        0x2 ff
  .rodata.SPI_GetInstance.str1.4
-                0x0000000000003d08       0x34 ./drivers/fsl_spi.o
+                0x0000000000003d1c       0x34 ./drivers/fsl_spi.o
  .rodata.SPI_SetTransferDelay.str1.4
-                0x0000000000003d3c        0xf ./drivers/fsl_spi.o
- *fill*         0x0000000000003d4b        0x1 ff
+                0x0000000000003d50        0xf ./drivers/fsl_spi.o
+ *fill*         0x0000000000003d5f        0x1 ff
  .rodata.SPI_MasterInit.str1.4
-                0x0000000000003d4c       0x3d ./drivers/fsl_spi.o
- *fill*         0x0000000000003d89        0x3 ff
+                0x0000000000003d60       0x3d ./drivers/fsl_spi.o
+ *fill*         0x0000000000003d9d        0x3 ff
  .rodata.SPI_MasterSetBaudRate.str1.4
-                0x0000000000003d8c       0x41 ./drivers/fsl_spi.o
- *fill*         0x0000000000003dcd        0x3 ff
+                0x0000000000003da0       0x41 ./drivers/fsl_spi.o
+ *fill*         0x0000000000003de1        0x3 ff
  .rodata.SPI0_DriverIRQHandler.str1.4
-                0x0000000000003dd0       0x17 ./drivers/fsl_spi.o
- *fill*         0x0000000000003de7        0x1 ff
+                0x0000000000003de4       0x17 ./drivers/fsl_spi.o
+ *fill*         0x0000000000003dfb        0x1 ff
  .rodata.__func__.18
-                0x0000000000003de8       0x10 ./drivers/fsl_spi.o
+                0x0000000000003dfc       0x10 ./drivers/fsl_spi.o
  .rodata.__func__.17
-                0x0000000000003df8       0x15 ./drivers/fsl_spi.o
- *fill*         0x0000000000003e0d        0x3 ff
+                0x0000000000003e0c       0x15 ./drivers/fsl_spi.o
+ *fill*         0x0000000000003e21        0x3 ff
  .rodata.__func__.15
-                0x0000000000003e10        0xf ./drivers/fsl_spi.o
- *fill*         0x0000000000003e1f        0x1 ff
+                0x0000000000003e24        0xf ./drivers/fsl_spi.o
+ *fill*         0x0000000000003e33        0x1 ff
  .rodata.__func__.11
-                0x0000000000003e20       0x16 ./drivers/fsl_spi.o
- *fill*         0x0000000000003e36        0x2 ff
+                0x0000000000003e34       0x16 ./drivers/fsl_spi.o
+ *fill*         0x0000000000003e4a        0x2 ff
  .rodata.__func__.0
-                0x0000000000003e38       0x16 ./drivers/fsl_spi.o
- *fill*         0x0000000000003e4e        0x2 ff
+                0x0000000000003e4c       0x16 ./drivers/fsl_spi.o
+ *fill*         0x0000000000003e62        0x2 ff
  .rodata.SWM_SetMovablePinSelect.str1.4
-                0x0000000000003e50       0x2a ./drivers/fsl_swm.o
+                0x0000000000003e64       0x2a ./drivers/fsl_swm.o
                                          0x3a (size before relaxing)
- *fill*         0x0000000000003e7a        0x2 ff
+ *fill*         0x0000000000003e8e        0x2 ff
  .rodata.__func__.2
-                0x0000000000003e7c       0x18 ./drivers/fsl_swm.o
+                0x0000000000003e90       0x18 ./drivers/fsl_swm.o
  .rodata.s_usartBaseAddrs
-                0x0000000000003e94        0x8 ./drivers/fsl_usart.o
+                0x0000000000003ea8        0x8 ./drivers/fsl_usart.o
  .rodata.s_usartClock
-                0x0000000000003e9c        0x4 ./drivers/fsl_usart.o
+                0x0000000000003eb0        0x4 ./drivers/fsl_usart.o
  .rodata.s_usartRest
-                0x0000000000003ea0        0x8 ./drivers/fsl_usart.o
+                0x0000000000003eb4        0x8 ./drivers/fsl_usart.o
  .rodata.USART_GetInstance.str1.4
-                0x0000000000003ea8       0x38 ./drivers/fsl_usart.o
+                0x0000000000003ebc       0x38 ./drivers/fsl_usart.o
  .rodata.USART_Init.str1.4
-                0x0000000000003ee0       0x3d ./drivers/fsl_usart.o
+                0x0000000000003ef4       0x3d ./drivers/fsl_usart.o
  .rodata.USART_GetDefaultConfig.str1.4
-                0x0000000000003ee0        0xf ./drivers/fsl_usart.o
+                0x0000000000003ef4        0xf ./drivers/fsl_usart.o
  .rodata.USART_SetBaudRate.str1.4
-                0x0000000000003ee0       0x29 ./drivers/fsl_usart.o
+                0x0000000000003ef4       0x29 ./drivers/fsl_usart.o
                                          0x6d (size before relaxing)
- *fill*         0x0000000000003f09        0x3 ff
+ *fill*         0x0000000000003f1d        0x3 ff
  .rodata.USART_WriteBlocking.str1.4
-                0x0000000000003f0c       0x24 ./drivers/fsl_usart.o
+                0x0000000000003f20       0x24 ./drivers/fsl_usart.o
  .rodata.__func__.18
-                0x0000000000003f30       0x12 ./drivers/fsl_usart.o
- *fill*         0x0000000000003f42        0x2 ff
+                0x0000000000003f44       0x12 ./drivers/fsl_usart.o
+ *fill*         0x0000000000003f56        0x2 ff
  .rodata.__func__.13
-                0x0000000000003f44        0xb ./drivers/fsl_usart.o
- *fill*         0x0000000000003f4f        0x1 ff
+                0x0000000000003f58        0xb ./drivers/fsl_usart.o
+ *fill*         0x0000000000003f63        0x1 ff
  .rodata.__func__.11
-                0x0000000000003f50       0x17 ./drivers/fsl_usart.o
- *fill*         0x0000000000003f67        0x1 ff
+                0x0000000000003f64       0x17 ./drivers/fsl_usart.o
+ *fill*         0x0000000000003f7b        0x1 ff
  .rodata.__func__.10
-                0x0000000000003f68       0x12 ./drivers/fsl_usart.o
- *fill*         0x0000000000003f7a        0x2 ff
+                0x0000000000003f7c       0x12 ./drivers/fsl_usart.o
+ *fill*         0x0000000000003f8e        0x2 ff
  .rodata.__func__.9
-                0x0000000000003f7c       0x14 ./drivers/fsl_usart.o
+                0x0000000000003f90       0x14 ./drivers/fsl_usart.o
  .rodata.__func__.8
-                0x0000000000003f90       0x13 ./drivers/fsl_usart.o
- *fill*         0x0000000000003fa3        0x1 ff
+                0x0000000000003fa4       0x13 ./drivers/fsl_usart.o
+ *fill*         0x0000000000003fb7        0x1 ff
  .rodata.s_UsartAdapterBase
-                0x0000000000003fa4        0x8 ./component/uart/fsl_adapter_miniusart.o
+                0x0000000000003fb8        0x8 ./component/uart/fsl_adapter_miniusart.o
  .rodata.HAL_UartInit.str1.4
-                0x0000000000003fac       0xa2 ./component/uart/fsl_adapter_miniusart.o
- *fill*         0x000000000000404e        0x2 ff
+                0x0000000000003fc0       0xa2 ./component/uart/fsl_adapter_miniusart.o
+ *fill*         0x0000000000004062        0x2 ff
  .rodata.HAL_UartReceiveBlocking.str1.4
-                0x0000000000004050        0xf ./component/uart/fsl_adapter_miniusart.o
- *fill*         0x000000000000405f        0x1 ff
+                0x0000000000004064        0xf ./component/uart/fsl_adapter_miniusart.o
+ *fill*         0x0000000000004073        0x1 ff
  .rodata.__func__.5
-                0x0000000000004060        0xd ./component/uart/fsl_adapter_miniusart.o
- *fill*         0x000000000000406d        0x3 ff
+                0x0000000000004074        0xd ./component/uart/fsl_adapter_miniusart.o
+ *fill*         0x0000000000004081        0x3 ff
  .rodata.__func__.3
-                0x0000000000004070       0x18 ./component/uart/fsl_adapter_miniusart.o
+                0x0000000000004084       0x18 ./component/uart/fsl_adapter_miniusart.o
  .rodata.__func__.2
-                0x0000000000004088       0x15 ./component/uart/fsl_adapter_miniusart.o
- *fill*         0x000000000000409d        0x3 ff
+                0x000000000000409c       0x15 ./component/uart/fsl_adapter_miniusart.o
+ *fill*         0x00000000000040b1        0x3 ff
  .rodata.BOARD_InitDebugConsole.str1.4
-                0x00000000000040a0       0x24 ./board/board.o
+                0x00000000000040b4       0x24 ./board/board.o
  .rodata.__func__.0
-                0x00000000000040c4       0x17 ./board/board.o
- *fill*         0x00000000000040db        0x1 ff
+                0x00000000000040d8       0x17 ./board/board.o
+ *fill*         0x00000000000040ef        0x1 ff
  .rodata.CLOCK_SetCoreSysClkDiv.str1.4
-                0x00000000000040dc       0x69 ./board/clock_config.o
- *fill*         0x0000000000004145        0x3 ff
+                0x00000000000040f0       0x69 ./board/clock_config.o
+ *fill*         0x0000000000004159        0x3 ff
  .rodata.__func__.0
-                0x0000000000004148       0x17 ./board/clock_config.o
- *fill*         0x000000000000415f        0x1 ff
+                0x000000000000415c       0x17 ./board/clock_config.o
+ *fill*         0x0000000000004173        0x1 ff
  .rodata.SPI0_config
-                0x0000000000004160       0x18 ./board/peripherals.o
-                0x0000000000004160                SPI0_config
-                0x0000000000004178                . = ALIGN (0x4)
-                0x0000000000004178                . = ALIGN (0x4)
+                0x0000000000004174       0x18 ./board/peripherals.o
+                0x0000000000004174                SPI0_config
+                0x000000000000418c                . = ALIGN (0x4)
+                0x000000000000418c                . = ALIGN (0x4)
  *(.init)
- .init          0x0000000000004178        0x4 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crti.o
-                0x0000000000004178                _init
- .init          0x000000000000417c        0x8 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtn.o
-                0x0000000000004184                . = ALIGN (0x4)
-                0x0000000000004184                __preinit_array_start = .
+ .init          0x000000000000418c        0x4 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crti.o
+                0x000000000000418c                _init
+ .init          0x0000000000004190        0x8 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtn.o
+                0x0000000000004198                . = ALIGN (0x4)
+                0x0000000000004198                __preinit_array_start = .
  *(SORT_BY_ALIGNMENT(.preinit_array))
-                0x0000000000004184                __preinit_array_end = .
-                0x0000000000004184                . = ALIGN (0x4)
-                0x0000000000004184                __init_array_start = .
+                0x0000000000004198                __preinit_array_end = .
+                0x0000000000004198                . = ALIGN (0x4)
+                0x0000000000004198                __init_array_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.init_array.*)))
  *(SORT_BY_ALIGNMENT(.init_array))
- .init_array    0x0000000000004184        0x4 ./source/IO_LedController_CPP.o
- .init_array    0x0000000000004188        0x4 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
-                0x000000000000418c                __init_array_end = .
+ .init_array    0x0000000000004198        0x4 ./source/IO_LedController_CPP.o
+ .init_array    0x000000000000419c        0x4 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x00000000000041a0                __init_array_end = .
  *(.fini)
- .fini          0x000000000000418c        0x4 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crti.o
-                0x000000000000418c                _fini
- .fini          0x0000000000004190        0x8 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtn.o
-                0x0000000000004198                . = ALIGN (0x4)
+ .fini          0x00000000000041a0        0x4 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crti.o
+                0x00000000000041a0                _fini
+ .fini          0x00000000000041a4        0x8 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtn.o
+                0x00000000000041ac                . = ALIGN (0x4)
  *crtbegin.o(SORT_BY_ALIGNMENT(.ctors))
  *(SORT_BY_ALIGNMENT(EXCLUDE_FILE(*crtend.o) .ctors))
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.ctors.*)))
  *crtend.o(SORT_BY_ALIGNMENT(.ctors))
-                0x0000000000004198                . = ALIGN (0x4)
+                0x00000000000041ac                . = ALIGN (0x4)
  *crtbegin.o(SORT_BY_ALIGNMENT(.dtors))
  *(SORT_BY_ALIGNMENT(EXCLUDE_FILE(*crtend.o) .dtors))
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.dtors.*)))
  *crtend.o(SORT_BY_ALIGNMENT(.dtors))
-                0x0000000000004198                . = ALIGN (0x4)
+                0x00000000000041ac                . = ALIGN (0x4)
 
-.glue_7         0x0000000000004198        0x0
- .glue_7        0x0000000000004198        0x0 linker stubs
+.glue_7         0x00000000000041ac        0x0
+ .glue_7        0x00000000000041ac        0x0 linker stubs
 
-.glue_7t        0x0000000000004198        0x0
- .glue_7t       0x0000000000004198        0x0 linker stubs
+.glue_7t        0x00000000000041ac        0x0
+ .glue_7t       0x00000000000041ac        0x0 linker stubs
 
-.vfp11_veneer   0x0000000000004198        0x0
- .vfp11_veneer  0x0000000000004198        0x0 linker stubs
+.vfp11_veneer   0x00000000000041ac        0x0
+ .vfp11_veneer  0x00000000000041ac        0x0 linker stubs
 
-.v4_bx          0x0000000000004198        0x0
- .v4_bx         0x0000000000004198        0x0 linker stubs
+.v4_bx          0x00000000000041ac        0x0
+ .v4_bx         0x00000000000041ac        0x0 linker stubs
 
-.iplt           0x0000000000004198        0x0
- .iplt          0x0000000000004198        0x0 ./utilities/fsl_assert.o
+.iplt           0x00000000000041ac        0x0
+ .iplt          0x00000000000041ac        0x0 ./utilities/fsl_assert.o
 
 .ARM.extab
  *(SORT_BY_ALIGNMENT(.ARM.extab*) SORT_BY_ALIGNMENT(.gnu.linkonce.armextab.*))
 
-.ARM.exidx      0x0000000000004198        0x8
-                0x0000000000004198                __exidx_start = .
+.ARM.exidx      0x00000000000041ac        0x8
+                0x00000000000041ac                __exidx_start = .
  *(SORT_BY_ALIGNMENT(.ARM.exidx*) SORT_BY_ALIGNMENT(.gnu.linkonce.armexidx.*))
  .ARM.exidx.text.__udivmoddi4
-                0x0000000000004198        0x8 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
-                0x00000000000041a0                __exidx_end = .
-                0x00000000000041a0                _etext = .
+                0x00000000000041ac        0x8 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_udivmoddi4.o)
+                0x00000000000041b4                __exidx_end = .
+                0x00000000000041b4                _etext = .
 
-.rel.dyn        0x00000000000041a0        0x0
- .rel.iplt      0x00000000000041a0        0x0 ./utilities/fsl_assert.o
+.rel.dyn        0x00000000000041b4        0x0
+ .rel.iplt      0x00000000000041b4        0x0 ./utilities/fsl_assert.o
 
-.eh_frame       0x00000000000041a0        0x0
- .eh_frame      0x00000000000041a0        0x0 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
+.eh_frame       0x00000000000041b4        0x0
+ .eh_frame      0x00000000000041b4        0x0 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
 
-.data_RAM2      0x0000000010000fe0        0x0 load address 0x00000000000041a0
+.data_RAM2      0x0000000010000fe0        0x0 load address 0x00000000000041b4
  FILL mask 0xff
                 [!provide]                        PROVIDE (__start_data_RAM2 = .)
                 [!provide]                        PROVIDE (__start_data_IAP_SRAM = .)
@@ -3954,7 +3954,7 @@ END GROUP
                 0x0000000010000000                . = ALIGN (0x4)
                 0x0000000010000000                _end_uninit_RESERVED = .
 
-.data           0x0000000010000000       0x5c load address 0x00000000000041a0
+.data           0x0000000010000000       0x5c load address 0x00000000000041b4
  FILL mask 0xff
                 0x0000000010000000                _data = .
                 [!provide]                        PROVIDE (__start_data_RAM = .)
@@ -3985,11 +3985,11 @@ END GROUP
                 [!provide]                        PROVIDE (__end_data_RAM = .)
                 [!provide]                        PROVIDE (__end_data_SRAM = .)
 
-.igot.plt       0x000000001000005c        0x0 load address 0x00000000000041fc
+.igot.plt       0x000000001000005c        0x0 load address 0x0000000000004210
  .igot.plt      0x000000001000005c        0x0 ./utilities/fsl_assert.o
 
 .tm_clone_table
-                0x000000001000005c        0x0 load address 0x00000000000041fc
+                0x000000001000005c        0x0 load address 0x0000000000004210
  .tm_clone_table
                 0x000000001000005c        0x0 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
  .tm_clone_table
@@ -4102,10 +4102,10 @@ END GROUP
                 0x0000000010000ee8                _vStackBase = .
                 0x0000000010000ee8                . = ALIGN (0x4)
                 0x0000000010000fe0                _vStackTop = (. + _StackSize)
-                0xffffffffefffe4cf                PROVIDE (__valid_user_code_checksum = (0x0 - (((_vStackTop + (ResetISR + 0x1)) + (DEFINED (NMI_Handler)?NMI_Handler:M0_NMI_Handler + 0x1)) + (DEFINED (HardFault_Handler)?HardFault_Handler:M0_HardFault_Handler + 0x1))))
+                0xffffffffefffe4bb                PROVIDE (__valid_user_code_checksum = (0x0 - (((_vStackTop + (ResetISR + 0x1)) + (DEFINED (NMI_Handler)?NMI_Handler:M0_NMI_Handler + 0x1)) + (DEFINED (HardFault_Handler)?HardFault_Handler:M0_HardFault_Handler + 0x1))))
                 0x0000000000000000                _image_start = LOADADDR (.text)
-                0x00000000000041fc                _image_end = (LOADADDR (.data) + SIZEOF (.data))
-                0x00000000000041fc                _image_size = (_image_end - _image_start)
+                0x0000000000004210                _image_end = (LOADADDR (.data) + SIZEOF (.data))
+                0x0000000000004210                _image_size = (_image_end - _image_start)
 OUTPUT(IO_LedController_CPP.axf elf32-littlearm)
 LOAD linker stubs
 
@@ -4378,28 +4378,28 @@ LOAD linker stubs
  .debug_macro   0x000000000000b44f      0x233 ./board/pin_mux.o
  .debug_macro   0x000000000000b682       0x46 ./board/pin_mux.o
 
-.debug_line     0x0000000000000000     0xb8dd
+.debug_line     0x0000000000000000     0xb8e0
  .debug_line    0x0000000000000000      0x61c ./utilities/fsl_assert.o
  .debug_line    0x000000000000061c      0xb0e ./utilities/fsl_debug_console.o
  .debug_line    0x000000000000112a      0x3e8 ./startup/startup_lpc804.o
- .debug_line    0x0000000000001512     0x17ed ./source/IO_LedController_CPP.o
- .debug_line    0x0000000000002cff     0x27fc ./source/Neopixels.o
- .debug_line    0x00000000000054fb      0x704 ./source/cpp_config.o
- .debug_line    0x0000000000005bff       0x59 ./source/semihost_hardfault.o
- .debug_line    0x0000000000005c58      0x8e9 ./drivers/fsl_clock.o
- .debug_line    0x0000000000006541      0x61a ./drivers/fsl_reset.o
- .debug_line    0x0000000000006b5b      0xf7b ./drivers/fsl_spi.o
- .debug_line    0x0000000000007ad6      0x68b ./drivers/fsl_swm.o
- .debug_line    0x0000000000008161      0xf17 ./drivers/fsl_usart.o
- .debug_line    0x0000000000009078      0x24b ./device/system_LPC804.o
- .debug_line    0x00000000000092c3      0x7b4 ./component/uart/fsl_adapter_miniusart.o
- .debug_line    0x0000000000009a77      0x6c1 ./board/board.o
- .debug_line    0x000000000000a138      0x6fd ./board/clock_config.o
- .debug_line    0x000000000000a835      0x641 ./board/peripherals.o
- .debug_line    0x000000000000ae76      0x7de ./board/pin_mux.o
- .debug_line    0x000000000000b654      0x1d7 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_nohost.a(_cr_sbrk.o)
- .debug_line    0x000000000000b82b       0x51 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_nohost.a(cr_abort.o)
- .debug_line    0x000000000000b87c       0x61 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_nohost.a(_cr_check_heap.o)
+ .debug_line    0x0000000000001512     0x17f0 ./source/IO_LedController_CPP.o
+ .debug_line    0x0000000000002d02     0x27fc ./source/Neopixels.o
+ .debug_line    0x00000000000054fe      0x704 ./source/cpp_config.o
+ .debug_line    0x0000000000005c02       0x59 ./source/semihost_hardfault.o
+ .debug_line    0x0000000000005c5b      0x8e9 ./drivers/fsl_clock.o
+ .debug_line    0x0000000000006544      0x61a ./drivers/fsl_reset.o
+ .debug_line    0x0000000000006b5e      0xf7b ./drivers/fsl_spi.o
+ .debug_line    0x0000000000007ad9      0x68b ./drivers/fsl_swm.o
+ .debug_line    0x0000000000008164      0xf17 ./drivers/fsl_usart.o
+ .debug_line    0x000000000000907b      0x24b ./device/system_LPC804.o
+ .debug_line    0x00000000000092c6      0x7b4 ./component/uart/fsl_adapter_miniusart.o
+ .debug_line    0x0000000000009a7a      0x6c1 ./board/board.o
+ .debug_line    0x000000000000a13b      0x6fd ./board/clock_config.o
+ .debug_line    0x000000000000a838      0x641 ./board/peripherals.o
+ .debug_line    0x000000000000ae79      0x7de ./board/pin_mux.o
+ .debug_line    0x000000000000b657      0x1d7 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_nohost.a(_cr_sbrk.o)
+ .debug_line    0x000000000000b82e       0x51 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_nohost.a(cr_abort.o)
+ .debug_line    0x000000000000b87f       0x61 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/bin/../lib/gcc/arm-none-eabi/12.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libcr_newlib_nohost.a(_cr_check_heap.o)
 
 .debug_str      0x0000000000000000    0x4078e
  .debug_str     0x0000000000000000    0x2bacb ./utilities/fsl_assert.o

@@ -5,7 +5,7 @@
  * Generated linker script file for LPC804
  * Created from linkscript.ldt by FMCreateLinkLibraries
  * Using Freemarker v2.3.30
- * MCUXpresso IDE v11.8.1 [Build 1197] [2023-10-27] on 16 sty 2024, 17:54:15
+ * MCUXpresso IDE v11.8.1 [Build 1197] [2023-10-27] on 17 sty 2024, 17:59:15
  */
 
 INCLUDE "IO_LedController_CPP_Debug_library.ld"

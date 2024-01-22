@@ -10,14 +10,13 @@
 ../source/Neopixels.cpp:22:6:void Neopixels::addColor(uint32_t)	16	static
 ../source/Neopixels.cpp:26:6:void Neopixels::writeColors(std::vector<long unsigned int>)	16	static
 ../source/Neopixels.cpp:31:6:void Neopixels::sendData()	32	static
-../source/Neopixels.cpp:49:6:void Neopixels::setPosition(uint32_t, uint32_t)	40	static
-../source/Neopixels.cpp:62:6:void Neopixels::fillColor(uint32_t)	32	static
-../source/Neopixels.cpp:73:6:void Neopixels::animate1(uint32_t)	32	static
-../source/Neopixels.cpp:87:6:void Neopixels::shiftLeft(uint32_t)	32	static
-../source/Neopixels.cpp:92:6:void Neopixels::shiftRight(uint32_t)	56	static
-../source/Neopixels.cpp:97:6:void Neopixels::setAnimColor(uint32_t)	16	static
-../source/Neopixels.cpp:102:6:void Neopixels::show()	24	static
-../source/Neopixels.cpp:117:6:void Neopixels::pendulum(uint32_t)	16	static
+../source/Neopixels.cpp:50:6:void Neopixels::setPosition(uint32_t, uint32_t)	40	static
+../source/Neopixels.cpp:58:6:void Neopixels::fillColor(uint32_t)	32	static
+../source/Neopixels.cpp:69:6:void Neopixels::animate_flow()	32	static
+../source/Neopixels.cpp:83:6:void Neopixels::shiftLeft(uint32_t)	32	static
+../source/Neopixels.cpp:88:6:void Neopixels::shiftRight(uint32_t)	56	static
+../source/Neopixels.cpp:93:6:void Neopixels::setAnimColor(uint32_t)	16	static
+../source/Neopixels.cpp:97:6:void Neopixels::pendulum(uint32_t)	16	static
 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/arm-none-eabi/include/c++/12.2.1/bits/stl_vector.h:137:2:std::_Vector_base<_Tp, _Alloc>::_Vector_impl::_Vector_impl() [with _Tp = long unsigned int; _Alloc = std::allocator<long unsigned int>]	16	static
 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/arm-none-eabi/include/c++/12.2.1/bits/allocator.h:174:7:std::allocator< <template-parameter-1-1> >::~allocator() [with _Tp = long unsigned int]	16	static
 /usr/local/mcuxpressoide-11.8.1_1197/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.8.1.202308071233/tools/arm-none-eabi/include/c++/12.2.1/bits/stl_vector.h:364:7:std::_Vector_base<_Tp, _Alloc>::~_Vector_base() [with _Tp = long unsigned int; _Alloc = std::allocator<long unsigned int>]	16	static

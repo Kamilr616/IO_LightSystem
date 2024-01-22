@@ -17,11 +17,8 @@
 #include "LPC804.h"
 #include "fsl_debug_console.h"
 #include "Neopixels.h"
-#include "fsl_usart.h"
 
 Neopixels *neopixels;
-
-uint32_t mode = 0;
 
 
 std::vector<uint32_t> colors = {
@@ -40,23 +37,12 @@ std::vector<uint32_t> colors = {
 };
 
 
-#if defined (__cplusplus)
-extern "C" {
-#endif
-
-void SysTick_Handler(void)
-{
-	//neopixels->show();
+void delay_(uint32_t delay_count) {
+    for (uint32_t i = 0; i < (delay_count * 100); i++) {
+        __asm volatile("nop");
+    }
 }
 
-void delay_ms(uint32_t n) {
-	for(uint32_t i=0;i<(100*n);i++) // simple delay
-	;
-}
-
-#if defined (__cplusplus)
-} // extern "C"
-#endif
 /*
  * @brief Application entry point.
  */
@@ -71,27 +57,24 @@ int main(void) {
 	BOARD_InitDebugConsole();
 
 #endif
-	char c;
-	char old_c;
+	char c, old_c;
 	old_c = ' ';
 
 	neopixels = new Neopixels(SPI0_PERIPHERAL);
-	neopixels->setAnimColor(0xff0f00);
-
 	neopixels->writeColors(colors);
 	neopixels->sendData();
 	PRINTF("Start\r\n");
 	while(1) {
 		c = GETCHAR();
-		PRINTF("Znak: %c\r\n", c);
+		PRINTF("Incoming: %c\r\n", c);
 
 		if (c != old_c) {
-		    char validInputs[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G'};
-		    uint32_t isValidInput = 0;
+		    char validInputs[7] = {'A', 'B', 'C', 'D', 'E', 'F', 'G'};
+		    bool isValidInput = false;
 
 		    for (uint32_t i = 0; i < 7; i++) {
 		        if (c == validInputs[i]) {
-		            isValidInput = 1;
+		            isValidInput = true;
 		            break;
 		        }
 		    }
@@ -119,19 +102,18 @@ int main(void) {
 		    	        neopixels->setAnimColor(0x00ff00);  // ILoveYou: Czerwony
 		    	        break;
 		    	    default:
-		    	        PRINTF("Error: %c\n", c);
+		    	        PRINTF("Value error: %c\n", c);
 		    	        neopixels->setAnimColor(0xffffff);
 		    	        break;
 		    	}
-
 		old_c = c;
 		for(uint32_t j=0; j<(neopixels->getLedsNumber()); j++) {
-			neopixels->animate1(neopixels->animColor);
-			delay_ms(280);
+			neopixels->animate_flow();
+			neopixels->sendData();
+			delay_(300);
 		}
 		}
 		}
-
 	}
 	delete neopixels;
 

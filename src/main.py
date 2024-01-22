@@ -4,7 +4,7 @@
 
 __author__ = "Kamil Rataj"
 __credits__ = ["Mateusz Ciszek"]
-__version__ = "0.1.0"
+__version__ = "1.0.0"
 __maintainer__ = "Kamil Rataj"
 __status__ = "Development"
 
@@ -29,17 +29,16 @@ COUNTER, FPS = 0, 0
 START_TIME = time.time()
 
 WIN_NAME = "Inteligentne oswietlenie - IO"  # Window name
-SERIAL_PORT = "/dev/ttyACM0"  # Serial port
 SERIAL_BAUDRATE = 9600  # Serial baudrate
 SERIAL_ENCODOING = 'iso-8859-1'  # Serial encoding
-BAR_HEIGHT = 40  # Height of the color bar
+BAR_HEIGHT = 35  # Height of the color bar
 
 
 def run(model: str, num_hands: int,
         min_hand_detection_confidence: float,
         min_hand_presence_confidence: float, min_tracking_confidence: float,
         camera_id: int, width: int, height: int, control_hand: int, output_mode: int, mirror: int,
-        bar_visibility: int) -> None:
+        bar_visibility: int, serial_port: str) -> None:
     """Continuously run inference on images acquired from the camera.
 
   Args:
@@ -58,7 +57,10 @@ def run(model: str, num_hands: int,
       output_mode:
       mirror:
       bar_visibility:
+      serial_port:
   """
+
+    print(WIN_NAME.center(100, '-'))
 
     # Start capturing video input from the camera
     cap = cv2.VideoCapture(camera_id)
@@ -74,8 +76,8 @@ def run(model: str, num_hands: int,
     fps_avg_frame_count = 10
 
     # Label box parameters
-    label_text_color = (56, 255, 0)  # white
-    label_font_size = 0.8
+    label_text_color = (0, 0, 250)
+    label_font_size = 0.7
     label_thickness = 1
 
     recognition_frame = None
@@ -84,7 +86,7 @@ def run(model: str, num_hands: int,
     # Initialize the serial port
     if output_mode == 1:
         ser = serial.Serial()
-        ser.port = SERIAL_PORT
+        ser.port = serial_port
         ser.baudrate = SERIAL_BAUDRATE
         ser.bytesize = serial.EIGHTBITS
         ser.parity = serial.PARITY_NONE
@@ -101,7 +103,7 @@ def run(model: str, num_hands: int,
             print("Failed to open serial port")
             sys.exit(1)
 
-    def serial_function(serial_com, info):
+    def serial_function(serial_com: serial, info: str) -> None:
         def parse_ctr_value(value_in):
             gesture_dict = {
                 "Thumb_Up": "A",
@@ -124,22 +126,20 @@ def run(model: str, num_hands: int,
             serial_com.reset_input_buffer()
         serial_com.flush()
 
-    def draw_color_bar(imageA, info):
-        bar_height = BAR_HEIGHT  # height of the color bar
-
-        def parse_color(gesture_info):
+    def draw_color_bar(_image, info: str) -> None:
+        def parse_color(gesture_info: str) -> tuple:
             gesture_dict = {
                 "Thumb_Up": (0, 255, 0),  # Zielony
                 "Thumb_Down": (255, 0, 255),  # Purpurowy
                 "Open_Palm": (255, 0, 0),  # Niebieski
                 "Closed_Fist": (0, 255, 255),  # Żółty
-                "Victory": (0, 255, 127),  # spring green
+                "Victory": (0, 248, 140),  # spring green
                 "Pointing_Up": (255, 255, 0),  # Cyjanowy
                 "ILoveYou": (0, 0, 255)  # Czerwony
             }
             return gesture_dict.get(gesture_info, (255, 255, 255))
 
-        cv2.rectangle(imageA, (0, imageA.shape[0] - bar_height), (imageA.shape[1], imageA.shape[0]), parse_color(info),
+        cv2.rectangle(_image, (0, height - BAR_HEIGHT), (width, height), parse_color(info),
                       -1)
 
     def save_result(result: vision.GestureRecognizerResult,
@@ -173,6 +173,7 @@ def run(model: str, num_hands: int,
             sys.exit(
                 'ERROR: Unable to read from webcam. Please verify your webcam settings.'
             )
+        # Flip the image horizontally for a later selfie-view display, and convert
         if mirror == 1:
             image = cv2.flip(image, 1)
         # Convert the image from BGR to RGB as required by the TFLite model.
@@ -227,7 +228,7 @@ def run(model: str, num_hands: int,
                     text_width, text_height = text_size
 
                     # Calculate text position (above the hand)
-                    text_x = x_min_px - 50 # Adjust this value as needed
+                    text_x = x_min_px - 50  # Adjust this value as needed
                     text_y = y_min_px - 10  # Adjust this value as needed
 
                     # Make sure the text is within the frame boundaries
@@ -238,11 +239,11 @@ def run(model: str, num_hands: int,
                     cv2.putText(current_frame, result_text, (text_x, text_y),
                                 cv2.FONT_HERSHEY_DUPLEX, label_font_size,
                                 label_text_color, label_thickness, cv2.LINE_AA)
-                    cv2.putText(current_frame, result_text2, (text_x, (text_y - text_height - 5)),
+                    cv2.putText(current_frame, result_text2, (text_x, (text_y - text_height - 8)),
                                 cv2.FONT_HERSHEY_DUPLEX, label_font_size,
                                 label_text_color, label_thickness, cv2.LINE_AA)
                     # Print the text
-                    print(f"Hand: {result_text}")
+                    print(f"Hand: {result_text2} {result_text}")
 
                     # Send the gesture trough serial port
                     if handedness_index == control_hand:
@@ -268,6 +269,7 @@ def run(model: str, num_hands: int,
             recognition_frame = current_frame
             recognition_result_list.clear()
 
+        # Show the current frame
         if recognition_frame is not None:
             cv2.imshow(WIN_NAME, recognition_frame)
 
@@ -311,10 +313,6 @@ def main():
              'considered successful.',
         required=False,
         default=0.5)
-    # Finding the camera ID can be very reliant on platform-dependent methods.
-    # One common approach is to use the fact that camera IDs are usually indexed sequentially by the OS, starting from 0.
-    # Here, we use OpenCV and create a VideoCapture object for each potential ID with 'cap = cv2.VideoCapture(i)'.
-    # If 'cap' is None or not 'cap.isOpened()', it indicates the camera ID is not available.
     parser.add_argument(
         '--cameraId', help='Id of camera.', required=False, default=0)
     parser.add_argument(
@@ -329,30 +327,35 @@ def main():
         default=480)
     parser.add_argument(
         '--controlHand',
-        help='Choose hand, left=1.',
+        help='Choose hand: right=0, left=1.',
         required=False,
         default=0)
     parser.add_argument(
         '--outputMode',
-        help='Output mode, 0=without, 1=serial.',
+        help='Output mode: 0=none, 1=serial.',
         required=False,
-        default=1)
+        default=0)
     parser.add_argument(
-        '--mirror',
-        help='Mirror image, 0=off, 1=on.',
+        '--mirrorImage',
+        help='Mirror image: 0=yes, 1=no.',
         required=False,
         default=0)
     parser.add_argument(
         '--barVisibility',
-        help='Color bar visibility, 0=off, 1=on.',
+        help='Color bar visibile: 0=yes, 1=no.',
         required=False,
         default=1)
+    parser.add_argument(
+        '--serialPort',
+        help='Serial port to connect to.',
+        required=False,
+        default='/dev/ttyACM0')
     args = parser.parse_args()
 
     run(args.model, int(args.numHands), args.minHandDetectionConfidence,
         args.minHandPresenceConfidence, args.minTrackingConfidence,
-        int(args.cameraId), args.frameWidth, args.frameHeight, int(args.controlHand), int(args.outputMode),
-        int(args.mirror), int(args.barVisibility))
+        int(args.cameraId), int(args.frameWidth), int(args.frameHeight), int(args.controlHand), int(args.outputMode),
+        int(args.mirrorImage), int(args.barVisibility), args.serialPort)
 
 
 if __name__ == '__main__':

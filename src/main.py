@@ -29,7 +29,7 @@ COUNTER, FPS = 0, 0
 START_TIME = time.time()
 
 WIN_NAME = "Inteligentne oswietlenie - IO"  # Window name
-SERIAL_PORT = "/dev/ttyACM0"  # Serial port
+SERIAL_PORT = "COM5"  # Serial port
 SERIAL_BAUDRATE = 9600  # Serial baudrate
 SERIAL_ENCODOING = 'iso-8859-1'  # Serial encoding
 BAR_HEIGHT = 40  # Height of the color bar
@@ -130,12 +130,12 @@ def run(model: str, num_hands: int,
         def parse_color(gesture_info):
             gesture_dict = {
                 "Thumb_Up": (0, 255, 0),  # Zielony
-                "Thumb_Down": (255, 0, 255),  # Purpurowy
+                "Thumb_Down":(0, 0, 255),  # Czerwony
                 "Open_Palm": (255, 0, 0),  # Niebieski
                 "Closed_Fist": (0, 255, 255),  # Żółty
-                "Victory": (0, 255, 127),  # spring green
+                "Victory": (150, 0, 150),  # spring green
                 "Pointing_Up": (255, 255, 0),  # Cyjanowy
-                "ILoveYou": (0, 0, 255)  # Czerwony
+                "ILoveYou": (255, 255, 0)
             }
             return gesture_dict.get(gesture_info, (255, 255, 255))
 

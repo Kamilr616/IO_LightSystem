@@ -34,6 +34,12 @@ std::vector<uint32_t> colors = {
 		0x0000ff, //blue
 		0x0080ff, //purple
 		0x00ffff, //violet
+		0x00ffff, //violet
+		0x00ffff, //violet
+		0x00ffff, //violet
+		0x00ffff, //violet
+
+
 };
 
 
@@ -61,8 +67,11 @@ int main(void) {
 	old_c = ' ';
 
 	neopixels = new Neopixels(SPI0_PERIPHERAL);
+
 	neopixels->writeColors(colors);
 	neopixels->sendData();
+
+
 	PRINTF("Start\r\n");
 	while(1) {
 		c = GETCHAR();

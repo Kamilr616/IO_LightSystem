@@ -30,7 +30,7 @@ START_TIME = time.time()
 
 WIN_NAME = "Inteligentne oswietlenie - IO"  # Window name
 SERIAL_BAUDRATE = 9600  # Serial baudrate
-SERIAL_ENCODOING = 'iso-8859-1'  # Serial encoding
+SERIAL_ENCODOING = 'ASCII'#'iso-8859-1'  # Serial encoding
 BAR_HEIGHT = 35  # Height of the color bar
 
 
@@ -334,7 +334,7 @@ def main():
         '--outputMode',
         help='Output mode: 0=none, 1=serial.',
         required=False,
-        default=0)
+        default=1)
     parser.add_argument(
         '--mirrorImage',
         help='Mirror image: 0=yes, 1=no.',

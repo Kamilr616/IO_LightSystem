@@ -1,0 +1,5 @@
+# IDE config
+.idea/
+# vendor SDK archives
+embedded/**/SDK_*.zip
+*.zip

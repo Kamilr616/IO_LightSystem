@@ -11,6 +11,7 @@ __status__ = "Development"
 import argparse
 import sys
 import time
+from pathlib import Path
 import serial
 
 import cv2
@@ -18,11 +19,9 @@ import mediapipe as mp
 
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
-from mediapipe.framework.formats import landmark_pb2
+from mediapipe.tasks.python.vision import drawing_styles, drawing_utils
+from mediapipe.tasks.python.vision.hand_landmarker import HandLandmarksConnections
 
-mp_hands = mp.solutions.hands
-mp_drawing = mp.solutions.drawing_utils
-mp_drawing_styles = mp.solutions.drawing_styles
 
 # Global variables to calculate FPS
 COUNTER, FPS = 0, 0
@@ -32,6 +31,7 @@ WIN_NAME = "Inteligentne oswietlenie - IO"  # Window name
 SERIAL_BAUDRATE = 9600  # Serial baudrate
 SERIAL_ENCODOING = 'ASCII'#'iso-8859-1'  # Serial encoding
 BAR_HEIGHT = 35  # Height of the color bar
+DEFAULT_MODEL_PATH = Path(__file__).resolve().with_name('gesture_recognizer.task')
 
 
 def run(model: str, num_hands: int,
@@ -103,7 +103,7 @@ def run(model: str, num_hands: int,
             print("Failed to open serial port")
             sys.exit(1)
 
-    def serial_function(serial_com: serial, info: str) -> None:
+    def serial_function(serial_com: serial.Serial, info: str) -> None:
         def parse_ctr_value(value_in):
             gesture_dict = {
                 "Thumb_Up": "A",
@@ -253,18 +253,12 @@ def run(model: str, num_hands: int,
                             draw_color_bar(current_frame, category_name)
 
                 # Draw hand landmarks on the frame
-                hand_landmarks_proto = landmark_pb2.NormalizedLandmarkList()
-                hand_landmarks_proto.landmark.extend([
-                    landmark_pb2.NormalizedLandmark(x=landmark.x, y=landmark.y,
-                                                    z=landmark.z) for landmark in
-                    hand_landmarks
-                ])
-                mp_drawing.draw_landmarks(
+                drawing_utils.draw_landmarks(
                     current_frame,
-                    hand_landmarks_proto,
-                    mp_hands.HAND_CONNECTIONS,
-                    mp_drawing_styles.get_default_hand_landmarks_style(),
-                    mp_drawing_styles.get_default_hand_connections_style())
+                    hand_landmarks,
+                    HandLandmarksConnections.HAND_CONNECTIONS,
+                    drawing_styles.get_default_hand_landmarks_style(),
+                    drawing_styles.get_default_hand_connections_style())
 
             recognition_frame = current_frame
             recognition_result_list.clear()
@@ -282,80 +276,100 @@ def run(model: str, num_hands: int,
     cv2.destroyAllWindows()
 
 
-def main():
+def unit_interval(value: str) -> float:
+    parsed = float(value)
+    if not 0 <= parsed <= 1:
+        raise argparse.ArgumentTypeError('value must be between 0 and 1')
+    return parsed
+
+
+def positive_int(value: str) -> int:
+    parsed = int(value)
+    if parsed <= 0:
+        raise argparse.ArgumentTypeError('value must be positive')
+    return parsed
+
+
+def create_argument_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument(
         '--model',
         help='Name of gesture recognition model.',
-        required=False,
-        default='gesture_recognizer.task')
+        default=str(DEFAULT_MODEL_PATH))
     parser.add_argument(
         '--numHands',
         help='Max number of hands that can be detected by the recognizer.',
-        required=False,
+        type=positive_int,
         default=2)
     parser.add_argument(
         '--minHandDetectionConfidence',
         help='The minimum confidence score for hand detection to be considered '
              'successful.',
-        required=False,
+        type=unit_interval,
         default=0.5)
     parser.add_argument(
         '--minHandPresenceConfidence',
         help='The minimum confidence score of hand presence score in the hand '
              'landmark detection.',
-        required=False,
+        type=unit_interval,
         default=0.5)
     parser.add_argument(
         '--minTrackingConfidence',
         help='The minimum confidence score for the hand tracking to be '
              'considered successful.',
-        required=False,
+        type=unit_interval,
         default=0.5)
     parser.add_argument(
-        '--cameraId', help='Id of camera.', required=False, default=0)
+        '--cameraId', help='Id of camera.', type=int, default=0)
     parser.add_argument(
         '--frameWidth',
         help='Width of frame to capture from camera.',
-        required=False,
+        type=positive_int,
         default=640)
     parser.add_argument(
         '--frameHeight',
         help='Height of frame to capture from camera.',
-        required=False,
+        type=positive_int,
         default=480)
     parser.add_argument(
         '--controlHand',
         help='Choose hand: right=0, left=1.',
-        required=False,
+        type=int,
+        choices=(0, 1),
         default=0)
     parser.add_argument(
         '--outputMode',
         help='Output mode: 0=none, 1=serial.',
-        required=False,
+        type=int,
+        choices=(0, 1),
         default=1)
     parser.add_argument(
         '--mirrorImage',
-        help='Mirror image: 0=yes, 1=no.',
-        required=False,
+        help='Mirror image: 0=no, 1=yes.',
+        type=int,
+        choices=(0, 1),
         default=0)
     parser.add_argument(
         '--barVisibility',
-        help='Color bar visibile: 0=yes, 1=no.',
-        required=False,
+        help='Color bar visible: 0=no, 1=yes.',
+        type=int,
+        choices=(0, 1),
         default=1)
     parser.add_argument(
         '--serialPort',
         help='Serial port to connect to.',
-        required=False,
         default='/dev/ttyACM0')
-    args = parser.parse_args()
+    return parser
 
-    run(args.model, int(args.numHands), args.minHandDetectionConfidence,
+
+def main():
+    args = create_argument_parser().parse_args()
+
+    run(args.model, args.numHands, args.minHandDetectionConfidence,
         args.minHandPresenceConfidence, args.minTrackingConfidence,
-        int(args.cameraId), int(args.frameWidth), int(args.frameHeight), int(args.controlHand), int(args.outputMode),
-        int(args.mirrorImage), int(args.barVisibility), args.serialPort)
+        args.cameraId, args.frameWidth, args.frameHeight, args.controlHand, args.outputMode,
+        args.mirrorImage, args.barVisibility, args.serialPort)
 
 
 if __name__ == '__main__':

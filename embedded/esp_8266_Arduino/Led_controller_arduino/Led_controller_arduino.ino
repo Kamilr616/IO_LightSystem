@@ -11,7 +11,7 @@
 // pull-up resistor so the switch pulls the pin to ground momentarily.
 // On a high -> low transition the button press logic will execute.
 
-#define PIXEL_PIN    6  // Digital IO pin connected to the NeoPixels.
+#define PIXEL_PIN    D6  // Board pin D6 (GPIO12) connected to the NeoPixels.
 
 #define PIXEL_COUNT 16  // Number of NeoPixels
 
@@ -73,7 +73,6 @@ void loop() {
             break;
           case 'G': // ILoveYou: Red
             theaterChase(strip.Color(255, 0, 0), 50);
-            break;
             break;
           default:
             Serial.print("Value error: ");

@@ -1,6 +1,6 @@
 # 💡 IO LightSystem — oświetlenie sterowane gestami
 
-[![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.9%20do%203.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![OpenCV](https://img.shields.io/badge/OpenCV-wizja-5C3EE8?logo=opencv&logoColor=white)](https://opencv.org/)
 [![MediaPipe](https://img.shields.io/badge/MediaPipe-rozpoznawanie%20gest%C3%B3w-0097A7?logo=google&logoColor=white)](https://developers.google.com/mediapipe)
 [![ESP8266](https://img.shields.io/badge/ESP8266-Arduino-000000?logo=espressif&logoColor=white)](https://www.espressif.com/)
@@ -10,6 +10,8 @@
 > 🇬🇧 [English version](README.md)
 
 > 🗓️ **Okres realizacji:** 2023–2024
+
+> 📘 [Dokumentacja techniczna](docs/TECHNICAL_DOCUMENTATION.pl.md)
 
 **System oświetlenia sterowany gestami dłoni.** Aplikacja w Pythonie rozpoznaje gesty dłoni z kamery przy użyciu **MediaPipe** i **OpenCV**, a rozpoznany gest wysyła przez **łącze szeregowe (serial)** do mikrokontrolera, który steruje **paskiem LED RGB (NeoPixel)** — machnięcie dłonią zmienia światło.
 
@@ -22,6 +24,12 @@ Projekt powstał jako **projekt z Inżynierii Oprogramowania**, początkowo osad
 - 🔌 **Sterowanie przez serial** — gesty strumieniowane portem szeregowym (9600 baud, 8N1) do mikrokontrolera
 - 🔧 **Dwa warianty firmware** sterownika LED — **ESP8266 (Arduino)** oraz **NXP LPC (LPCXpresso, C++)**, oba sterujące paskiem NeoPixel
 - ⚙️ **Konfigurowalność** — kamera (id/rozdzielczość), dłoń sterująca (lewa/prawa), progi detekcji/śledzenia, lustrzane odbicie obrazu, widoczność paska koloru, tryb wyjścia i port szeregowy (flagi CLI)
+
+## Interfejs
+
+![Okno OpenCV rozpoznające gest Victory](docs/gesture-recognition.png)
+
+*Rzeczywisty wynik aplikacji: MediaPipe rozpoznał gest `Victory` z pewnością 93,3%, narysował punkty dłoni i wyświetlił zielony pasek przypisany do gestu. Aby zrzut był powtarzalny, oficjalny [obraz testowy `Victory` z przykładu MediaPipe dla Pythona](https://github.com/google-ai-edge/mediapipe-samples/blob/main/examples/gesture_recognizer/python/gesture_recognizer.ipynb) został odtworzony jako strumień kamery; fizyczna kamera korzysta z tej samej ścieżki przechwytywania, inferencji i renderowania.*
 
 ## 🖐️ Mapa gestów
 
@@ -38,14 +46,12 @@ Projekt powstał jako **projekt z Inżynierii Oprogramowania**, początkowo osad
 
 ## 🧩 Jak to działa
 
-```
-Kamera ──▶ Aplikacja Python (OpenCV + MediaPipe GestureRecognizer)
-                     │  rozpoznany gest → bajt sterujący
-                     ▼
-              Port szeregowy (9600 8N1)
-                     ▼
-     Mikrokontroler  ──▶  pasek LED RGB (NeoPixel)
-     (ESP8266 / NXP LPC)
+```mermaid
+flowchart LR
+    CAM["Kamera"] -->|"klatki obrazu"| APP["Python<br/>OpenCV + MediaPipe"]
+    APP -->|"bajt gestu A-G / X"| SERIAL["Port szeregowy<br/>9600 8N1"]
+    SERIAL --> MCU["ESP8266 lub NXP LPC"]
+    MCU -->|"dane RGB"| LED["Pasek LED NeoPixel"]
 ```
 
 ## 📂 Struktura repozytorium
@@ -54,7 +60,7 @@ Kamera ──▶ Aplikacja Python (OpenCV + MediaPipe GestureRecognizer)
 |---------|------|
 | `src/main.py` | Aplikacja — obraz z kamery, rozpoznawanie gestów, pasek koloru, wyjście serial |
 | `src/gesture_recognizer.task` | Model MediaPipe Gesture Recognizer |
-| `src/requirements.txt` | Zależność Pythona (MediaPipe) |
+| `src/requirements.txt` | Zależności Pythona (MediaPipe, OpenCV, pySerial) |
 | `embedded/esp_8266_Arduino/` | Firmware sterownika LED NeoPixel na ESP8266 (Arduino) |
 | `embedded/IO_LedController_CPP/` | Firmware sterownika LED NeoPixel na NXP LPC (LPCXpresso, C++) |
 | `docs/` | Dokumentacja projektu i norma PN-EN 13201 (pierwotna inspiracja) |
@@ -63,10 +69,12 @@ Kamera ──▶ Aplikacja Python (OpenCV + MediaPipe GestureRecognizer)
 
 ### 1. Aplikacja Python
 
+Użyj **Pythona 3.9–3.12**. Plik wymagań instaluje MediaPipe `>=0.10.35,<0.11`, udostępniający API rysowania Tasks wykorzystywane przez aplikację.
+
 ```bash
 git clone https://github.com/Kamilr616/IO_LightSystem.git
 cd IO_LightSystem
-pip install mediapipe opencv-python pyserial
+pip install -r src/requirements.txt
 python src/main.py --serialPort COM3        # Windows
 # python src/main.py --serialPort /dev/ttyACM0   # Linux
 ```
@@ -79,9 +87,11 @@ Pełna lista opcji: `python src/main.py --help`. Przydatne flagi:
 | `--outputMode` | `0` = brak, `1` = serial | `1` |
 | `--cameraId` | Indeks kamery | `0` |
 | `--controlHand` | `0` = prawa, `1` = lewa | `0` |
-| `--mirrorImage` | `0` = odbicie, `1` = brak | `0` |
-| `--barVisibility` | `0` = pokaż pasek, `1` = ukryj | `1` |
+| `--mirrorImage` | `0` = bez odbicia, `1` = odbicie | `0` |
+| `--barVisibility` | `0` = ukryj pasek, `1` = pokaż | `1` |
 | `--numHands` | Maks. liczba wykrywanych dłoni | `2` |
+
+Testy interfejsu CLI uruchomisz poleceniem `python -m unittest discover -s tests`.
 
 ### 2. Firmware sterownika LED
 
@@ -102,7 +112,7 @@ Sterownik odczytuje bajty sterujące z łącza szeregowego i ustawia kolor paska
 
 ## 📄 Licencja
 
-Projekt na licencji [MIT](LICENSE).
+Projekt jest udostępniany na licencji [MIT](LICENSE). Normy, karty katalogowe i instrukcje podmiotów trzecich w `docs/` podlegają warunkom ich wydawców i nie są objęte licencją MIT.
 
 ## 👤 Autor
 

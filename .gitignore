@@ -1,5 +1,10 @@
 # IDE config
 .idea/
+__pycache__/
+*.py[cod]
 # vendor SDK archives
 embedded/**/SDK_*.zip
 *.zip
+
+# Generated firmware build output
+**/Debug/

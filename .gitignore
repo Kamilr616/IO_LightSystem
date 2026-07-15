@@ -1,0 +1,17 @@
+# IDE config
+.idea/
+__pycache__/
+*.py[cod]
+# vendor SDK archives
+embedded/**/SDK_*.zip
+*.zip
+
+# Generated firmware build output
+**/Debug/
+
+# Proprietary third-party reference documents
+docs/PN-EN-*.pdf
+docs/PKN-CEN_*.[pP][dD][fF]
+docs/LPC804_*.[pP][dD][fF]
+docs/UM*.[pP][dD][fF]
+docs/Schematic_*.[pP][dD][fF]

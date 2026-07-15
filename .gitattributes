@@ -1,0 +1,18 @@
+* text=auto
+
+*.bat text eol=crlf
+*.c text eol=lf
+*.cpp text eol=lf
+*.h text eol=lf
+*.ino text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.txt text eol=lf
+*.yml text eol=lf
+
+*.axf binary
+*.pdf binary
+*.PDF binary
+*.png binary
+*.task binary
+*.zip binary

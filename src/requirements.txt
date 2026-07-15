@@ -1,1 +1,3 @@
-mediapipe
+mediapipe==0.10.35
+opencv-contrib-python>=4.9,<6
+pyserial>=3.5,<4

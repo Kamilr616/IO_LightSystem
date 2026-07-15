@@ -1,3 +1,9 @@
+/*
+ * IO LightSystem modifications copyright (c) 2023 Kamil Rataj and contributors.
+ * Based on the Adafruit NeoPixel `buttoncycler` example.
+ * SPDX-License-Identifier: LGPL-3.0-or-later
+ */
+
 // Simple demonstration on using an input device to trigger changes on your
 // NeoPixels. Wire a momentary push button to connect from ground to a
 // digital IO pin. When the button is pressed it will change to a new pixel
@@ -11,7 +17,7 @@
 // pull-up resistor so the switch pulls the pin to ground momentarily.
 // On a high -> low transition the button press logic will execute.
 
-#define PIXEL_PIN    6  // Digital IO pin connected to the NeoPixels.
+#define PIXEL_PIN    D6  // Board pin D6 (GPIO12) connected to the NeoPixels.
 
 #define PIXEL_COUNT 16  // Number of NeoPixels
 
@@ -73,7 +79,6 @@ void loop() {
             break;
           case 'G': // ILoveYou: Red
             theaterChase(strip.Color(255, 0, 0), 50);
-            break;
             break;
           default:
             Serial.print("Value error: ");

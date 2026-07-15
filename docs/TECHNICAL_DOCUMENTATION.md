@@ -54,16 +54,17 @@ The Python sender writes only when no unread input is waiting on the serial
 object; otherwise it clears the input buffer. This is not an acknowledged or
 framed protocol: there is no checksum, sequence number or delivery confirmation.
 
-## Firmware variants
+## Interchangeable firmware implementations
 
-### ESP8266 / Arduino
+The Python host is controller-independent. The repository contains an NXP LPC804
+implementation and an alternative ESP8266/Arduino implementation; flash only
+the variant matching the connected board. Both receive the same `A`-`G` command
+set over a 9600 8N1 serial connection.
 
-`embedded/esp_8266_Arduino/Led_controller_arduino/Led_controller_arduino.ino`
-uses Adafruit NeoPixel with 16 pixels on Arduino pin `D6` (ESP8266 GPIO12). It
-accepts `A` through `G`, maps them to colours and runs a theatre-chase animation.
-The last byte is remembered, so an identical consecutive command does not
-restart the animation. `X` and other bytes are ignored and do not clear the
-strip.
+| Implementation | Target and toolchain | Source | LED handling |
+|---|---|---|---|
+| NXP LPC804 | LPCXpresso804, MCUXpresso IDE | `embedded/IO_LedController_CPP/` | Board-specific C++ NeoPixel driver |
+| Alternative ESP8266/Arduino | ESP8266, Arduino IDE | `embedded/esp_8266_Arduino/Led_controller_arduino/Led_controller_arduino.ino` | Adafruit NeoPixel, 16 pixels on `D6`/GPIO12 |
 
 ### NXP LPC804
 
@@ -72,6 +73,15 @@ SDK drivers, startup code and NeoPixel implementation. Its application receives
 the same `A`-`G` command set and suppresses repeated bytes. Pin mux, clocks and
 peripherals are board-specific and should be changed in MCUXpresso Config Tools,
 not inferred from the Arduino sketch.
+
+### Alternative implementation: ESP8266 / Arduino
+
+`embedded/esp_8266_Arduino/Led_controller_arduino/Led_controller_arduino.ino`
+provides the same serial-to-NeoPixel role without requiring NXP hardware. It uses
+the Adafruit NeoPixel library with 16 pixels on Arduino pin `D6` (ESP8266 GPIO12),
+maps `A` through `G` to colours and runs a theatre-chase animation. The last byte
+is remembered, so an identical consecutive command does not restart the
+animation. `X` and other bytes are ignored and do not clear the strip.
 
 ## Run and verify
 

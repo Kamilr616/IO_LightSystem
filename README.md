@@ -22,7 +22,7 @@ The project started as a **Software Engineering course project** framed around i
 - ✋ **Real-time hand-gesture recognition** — MediaPipe Gesture Recognizer (`src/gesture_recognizer.task`) over an OpenCV camera stream
 - 🎨 **7 gestures → colors & commands** — each recognized gesture maps to a color on an on-screen bar and to a control byte sent to the LED controller
 - 🔌 **Serial control** — gestures are streamed over a serial port (9600 baud, 8N1) to the microcontroller
-- 🔧 **Two firmware options** for the LED controller — **ESP8266 (Arduino)** and **NXP LPC (LPCXpresso, C++)**, both driving a NeoPixel strip
+- 🔧 **Two interchangeable firmware implementations** — **NXP LPC (LPCXpresso, C++)** and an alternative **ESP8266 (Arduino)** controller, both driving a NeoPixel strip through the same serial protocol
 - ⚙️ **Configurable** — camera id/resolution, controlling hand (left/right), detection/tracking confidence, image mirroring, color-bar visibility, output mode and serial port (all via CLI flags)
 
 ## Interface
@@ -98,25 +98,24 @@ Run the CLI tests with `python -m unittest discover -s tests`.
 
 ### 2. LED controller firmware
 
-Flash **one** of the controllers to your board and wire a NeoPixel strip:
+The repository provides two interchangeable controller implementations. Flash
+**one** of them and wire a NeoPixel strip:
 
-- **ESP8266 (Arduino):** open `embedded/esp_8266_Arduino/Led_controller_arduino/Led_controller_arduino.ino` in the Arduino IDE and upload.
 - **NXP LPC (LPCXpresso):** open `embedded/IO_LedController_CPP/` in MCUXpresso IDE and flash.
+- **Alternative ESP8266 (Arduino):** open `embedded/esp_8266_Arduino/Led_controller_arduino/Led_controller_arduino.ino` in the Arduino IDE and upload.
 
-The controller reads the control bytes from the serial link and sets the strip color accordingly.
+Both variants accept the same `A`-`G` commands over a 9600 8N1 serial link, so
+the Python application does not need to change when switching boards. See the
+[technical documentation](docs/TECHNICAL_DOCUMENTATION.md) for their differences,
+dependencies and flashing workflow.
 
 ## 👥 Team
 
-| Member | Role |
-|--------|------|
-| **Kamil Rataj** | Author & maintainer — gesture app, serial protocol, firmware |
-| Mateusz Ciszek | Contributor |
-| Natalia Martemianow | Contributor |
+| Member | Role | Profiles |
+|--------|------|----------|
+| **Kamil Rataj** | Author & maintainer — gesture app, serial protocol, firmware | [GitHub](https://github.com/Kamilr616) · [LinkedIn](https://www.linkedin.com/in/kamil-r-153ab7121/) |
+| Mateusz Ciszek | Contributor | [GitHub](https://github.com/Matix351) |
 
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE). Bundled third-party components and direct dependencies are documented in [Third-Party Notices](THIRD_PARTY_NOTICES.md). Proprietary standards and vendor manuals are not distributed; use the [official external references](docs/REFERENCES.md).
-
-## 👤 Author
-
-**Kamil Rataj** — [GitHub](https://github.com/Kamilr616) · [LinkedIn](https://www.linkedin.com/in/kamil-r-153ab7121/)

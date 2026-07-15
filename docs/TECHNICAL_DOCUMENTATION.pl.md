@@ -53,15 +53,17 @@ Python zapisuje bajt tylko wtedy, gdy obiekt serial nie ma oczekujących danych
 wejściowych; w przeciwnym razie czyści bufor wejściowy. Protokół nie ma ramek,
 sumy kontrolnej, numerów sekwencji ani potwierdzenia dostarczenia.
 
-## Warianty firmware
+## Wymienne implementacje firmware
 
-### ESP8266 / Arduino
+Aplikacja Python jest niezależna od wybranego mikrokontrolera. Repozytorium
+zawiera implementację NXP LPC804 oraz alternatywną implementację ESP8266/Arduino;
+należy wgrać wyłącznie wariant przeznaczony dla podłączonej płytki. Oba odbierają
+ten sam zestaw komend `A`-`G` przez łącze szeregowe 9600 8N1.
 
-`embedded/esp_8266_Arduino/Led_controller_arduino/Led_controller_arduino.ino`
-używa Adafruit NeoPixel dla 16 pikseli na pinie Arduino `D6` (GPIO12 ESP8266).
-Obsługuje `A`-`G`, mapuje je na kolory i uruchamia animację theatre chase.
-Zapamiętuje ostatni bajt, dlatego identyczna kolejna komenda nie restartuje
-animacji. `X` i pozostałe bajty są ignorowane i nie gaszą taśmy.
+| Implementacja | Platforma i narzędzia | Kod źródłowy | Obsługa LED |
+|---|---|---|---|
+| NXP LPC804 | LPCXpresso804, MCUXpresso IDE | `embedded/IO_LedController_CPP/` | Dedykowany sterownik NeoPixel w C++ |
+| Alternatywna ESP8266/Arduino | ESP8266, Arduino IDE | `embedded/esp_8266_Arduino/Led_controller_arduino/Led_controller_arduino.ino` | Adafruit NeoPixel, 16 pikseli na `D6`/GPIO12 |
 
 ### NXP LPC804
 
@@ -70,6 +72,15 @@ płytki, sterowniki SDK, startup i obsługę NeoPixel. Aplikacja odbiera ten sam
 zestaw `A`-`G` i pomija powtórzenia. Mux pinów, zegary i peryferia są zależne od
 płytki i należy zmieniać je w MCUXpresso Config Tools, a nie kopiować ze szkicu
 Arduino.
+
+### Alternatywna implementacja: ESP8266 / Arduino
+
+`embedded/esp_8266_Arduino/Led_controller_arduino/Led_controller_arduino.ino`
+realizuje tę samą funkcję serial-to-NeoPixel bez konieczności używania sprzętu
+NXP. Korzysta z biblioteki Adafruit NeoPixel dla 16 pikseli na pinie Arduino `D6`
+(GPIO12 ESP8266), obsługuje `A`-`G`, mapuje je na kolory i uruchamia animację
+theatre chase. Zapamiętuje ostatni bajt, dlatego identyczna kolejna komenda nie
+restartuje animacji. `X` i pozostałe bajty są ignorowane i nie gaszą taśmy.
 
 ## Uruchamianie i weryfikacja
 

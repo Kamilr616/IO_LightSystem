@@ -22,7 +22,7 @@ Projekt powstał jako **projekt z Inżynierii Oprogramowania**, początkowo osad
 - ✋ **Rozpoznawanie gestów w czasie rzeczywistym** — MediaPipe Gesture Recognizer (`src/gesture_recognizer.task`) na strumieniu z kamery (OpenCV)
 - 🎨 **7 gestów → kolory i komendy** — każdy gest mapuje się na kolor na pasku ekranowym oraz na bajt sterujący wysyłany do sterownika LED
 - 🔌 **Sterowanie przez serial** — gesty strumieniowane portem szeregowym (9600 baud, 8N1) do mikrokontrolera
-- 🔧 **Dwa warianty firmware** sterownika LED — **ESP8266 (Arduino)** oraz **NXP LPC (LPCXpresso, C++)**, oba sterujące paskiem NeoPixel
+- 🔧 **Dwie wymienne implementacje firmware** — **NXP LPC (LPCXpresso, C++)** oraz alternatywny sterownik **ESP8266 (Arduino)**, oba obsługujące pasek NeoPixel przez ten sam protokół szeregowy
 - ⚙️ **Konfigurowalność** — kamera (id/rozdzielczość), dłoń sterująca (lewa/prawa), progi detekcji/śledzenia, lustrzane odbicie obrazu, widoczność paska koloru, tryb wyjścia i port szeregowy (flagi CLI)
 
 ## Interfejs
@@ -98,25 +98,23 @@ Testy interfejsu CLI uruchomisz poleceniem `python -m unittest discover -s tests
 
 ### 2. Firmware sterownika LED
 
-Wgraj **jeden** ze sterowników na płytkę i podłącz pasek NeoPixel:
+Repozytorium zawiera dwie wymienne implementacje sterownika. Wgraj **jedną** z
+nich na odpowiednią płytkę i podłącz pasek NeoPixel:
 
-- **ESP8266 (Arduino):** otwórz `embedded/esp_8266_Arduino/Led_controller_arduino/Led_controller_arduino.ino` w Arduino IDE i wgraj.
 - **NXP LPC (LPCXpresso):** otwórz `embedded/IO_LedController_CPP/` w MCUXpresso IDE i wgraj.
+- **Alternatywna ESP8266 (Arduino):** otwórz `embedded/esp_8266_Arduino/Led_controller_arduino/Led_controller_arduino.ino` w Arduino IDE i wgraj.
 
-Sterownik odczytuje bajty sterujące z łącza szeregowego i ustawia kolor paska.
+Oba warianty przyjmują te same komendy `A`-`G` przez łącze szeregowe 9600 8N1,
+dlatego zmiana płytki nie wymaga zmian w aplikacji Python. Różnice, zależności i
+sposób wgrywania opisuje [dokumentacja techniczna](docs/TECHNICAL_DOCUMENTATION.pl.md).
 
 ## 👥 Zespół
 
-| Osoba | Rola |
-|-------|------|
-| **Kamil Rataj** | Autor i opiekun — aplikacja gestów, protokół serial, firmware |
-| Mateusz Ciszek | Współtwórca |
-| Natalia Martemianow | Współtwórczyni |
+| Osoba | Rola | Profile |
+|-------|------|---------|
+| **Kamil Rataj** | Autor i opiekun — aplikacja gestów, protokół serial, firmware | [GitHub](https://github.com/Kamilr616) · [LinkedIn](https://www.linkedin.com/in/kamil-r-153ab7121/) |
+| Mateusz Ciszek | Współtwórca | [GitHub](https://github.com/Matix351) |
 
 ## 📄 Licencja
 
 Projekt jest udostępniany na licencji [MIT](LICENSE). Dołączone komponenty podmiotów trzecich i zależności bezpośrednie opisuje plik [Third-Party Notices](THIRD_PARTY_NOTICES.md). Zastrzeżone normy i instrukcje producentów nie są rozpowszechniane; korzystaj z [oficjalnych odnośników zewnętrznych](docs/REFERENCES.pl.md).
-
-## 👤 Autor
-
-**Kamil Rataj** — [GitHub](https://github.com/Kamilr616) · [LinkedIn](https://www.linkedin.com/in/kamil-r-153ab7121/)

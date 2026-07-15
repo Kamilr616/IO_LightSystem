@@ -42,7 +42,7 @@ The link is raw ASCII at **9600 baud, 8 data bits, no parity and 1 stop bit**.
 | Gesture label | Byte | Display/LED colour |
 |---|---:|---|
 | `Thumb_Up` | `A` | Green |
-| `Thumb_Down` | `B` | Purple |
+| `Thumb_Down` | `B` | Magenta |
 | `Open_Palm` | `C` | Blue |
 | `Closed_Fist` | `D` | Yellow |
 | `Victory` | `E` | Spring green |
